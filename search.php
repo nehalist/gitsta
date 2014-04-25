@@ -2,7 +2,7 @@
 
     <div class="subhead">
         <div class="container">
-            <h3>Results for: <em><?= get_search_query(); ?></em></h3>
+            <h3>Results for: <em><?php echo get_search_query(); ?></em></h3>
         </div>
     </div>
     <div class="container">

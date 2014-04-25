@@ -20,7 +20,7 @@ if ( ! isset( $_REQUEST['settings-updated'] ) ) {
         <table class="form-table">
             <tr valign="top">
                 <th scope="row">Comment Markdown Support</th>
-                <td><input id="gitsta_theme_options[comment_markdown_support]" type="checkbox" name="gitsta_theme_options[comment_markdown_support]" value="1" <?= (isset($options['comment_markdown_support']) && $options['comment_markdown_support'] == 1 ? 'checked' : ''); ?> /></td>
+                <td><input id="gitsta_theme_options[comment_markdown_support]" type="checkbox" name="gitsta_theme_options[comment_markdown_support]" value="1" <?php echo (isset($options['comment_markdown_support']) && $options['comment_markdown_support'] == 1 ? 'checked' : ''); ?> /></td>
             </tr>  
         </table>
 

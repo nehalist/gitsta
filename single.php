@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <div class="subhead">
         <div class="container">
-            <h3><small><a href="<?= home_url(); ?>"><i class="fa fa-chevron-left"></i></a></small> <?php the_title(); ?></h3>
+            <h3><small><a href="<?php echo home_url(); ?>"><i class="fa fa-chevron-left"></i></a></small> <?php the_title(); ?></h3>
         </div>
     </div>
     <div class="container">

@@ -25,8 +25,8 @@
                     <span class="text-muted"><small><?= ThemeComments::timeElapsedString($comment->comment_date); ?></small></span>
 
                     <span class="pull-right">
-                        <?= edit_comment_link('Edit', '', ' /'); ?>
-                        <?= get_comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => 'Reply'))); ?>
+                        <?php echo edit_comment_link('Edit', '', ' /'); ?>
+                        <?php echo get_comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => 'Reply'))); ?>
                     </span>
 
                     <?php if ($comment->comment_approved == 0) : ?>

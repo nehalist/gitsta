@@ -4,7 +4,7 @@
     </h3>
     <div name="meta">
         <p class="text-muted">
-            <i class="fa fa-calendar"></i> <?= get_the_date(); ?>
+            <i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
 
             <i class="fa fa-folder-open" style="margin-left: 20px;"></i> 
             <?php
