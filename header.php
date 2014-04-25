@@ -54,7 +54,7 @@
                     <div class="btn-group pull-right">
                         <?php
                         // Dropdown for anonymous users
-                        if( ! current_user_can('level_0')):
+                        if( ! is_user_logged_in()):
                         ?>
                         <a href="#" class="btn navbar-btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Anonymous <b class="caret"></b></a>
                         <ul class="dropdown-menu">
