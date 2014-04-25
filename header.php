@@ -70,7 +70,7 @@
                             <?php
                             // A link for gust, if installed
                             include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-                            if($current_user->user_level >= 1 && is_plugin_active('gust/gust.php')):
+                            if(current_user_can('publish_posts') && is_plugin_active('gust/gust.php')):
                             ?>
                             <li><a href="<?php bloginfo('url') ?>/gust">Gust</a></li>
                             <?php
