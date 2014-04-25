@@ -1,4 +1,4 @@
-<div id="post-<?php the_ID(); ?>" class="item">
+<div id="post-<?php the_ID(); ?>" class="item <?php post_class(); ?>">
     <h3 style="margin-top: 0;">
         <a href="<?php the_permalink(); ?>" name="<?php the_ID(); ?>" rel="bookmark"><?php the_title(); ?></a>
     </h3>

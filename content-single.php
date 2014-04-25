@@ -1,4 +1,4 @@
-<div id="post-<?php the_ID(); ?>" class="item">
+<div id="post-<?php the_ID(); ?>" class="item <?php post_class(); ?>">
     <div name="meta">
         <p class="text-muted">
             <i class="fa fa-calendar"></i> <?php echo the_date(); ?>
