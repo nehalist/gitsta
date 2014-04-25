@@ -13,7 +13,12 @@
         <!-- Theme style -->
         <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">
         
-        <?php wp_head(); ?>
+        <?php
+        if(is_singular()) {
+            wp_enqueue_script('comment-reply');
+        }
+        
+        wp_head(); ?>
     </head>
 
     <body>
