@@ -1,0 +1,205 @@
+/*
+Theme Name: gitsta
+Theme URI: http://www.doecode.net
+Author: Kevin Hirczy
+Author URI: http://doecode.net
+Description: Simple but pretty wordpress theme, insipred by GitHub.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+
+/*
+|----------------------------------------------------------
+| Global
+|----------------------------------------------------------
+*/
+
+body            { padding-top: 70px; }
+code            { background-color: #f5f5f5 !important; }
+img#wpstats     { display: none; }
+p > code        {
+    color: #000;
+    border: 1px solid #ddd;
+}
+.post-content   {
+    line-height: 1.8em;
+    text-align: justify;
+}
+div.item        { margin-bottom: 50px; }
+
+
+/*
+|----------------------------------------------------------
+| Images
+|----------------------------------------------------------
+|
+| from https://codex.wordpress.org/Styling_Images_in_Posts_and_Pages 
+|
+*/
+img.alignright      { float:right; margin:0 0 1em 1em; }
+img.alignleft       { float:left; margin:0 1em 1em 0; }
+img.aligncenter     { display: block; margin-left: auto; margin-right: auto; }
+a img.alignright    { float:right; margin:0 0 1em 1em; }
+a img.alignleft     { float:left; margin:0 1em 1em 0; }
+a img.aligncenter   { display: block; margin-left: auto; margin-right: auto; }
+
+
+/*
+|----------------------------------------------------------
+| Subhead
+|----------------------------------------------------------
+*/
+
+.subhead    {
+    position: relative;
+    bottom: 19px;
+    height: 80px;
+    border-bottom: 1px #e7e7e7 solid;
+    margin-bottom: 15px;
+}
+
+.subhead h3 {
+    margin: 0;
+    padding: 0;
+    
+    line-height: 80px;
+}
+
+
+/*
+|----------------------------------------------------------
+| Comments
+|----------------------------------------------------------
+*/
+
+.comment-body    { position: relative; }
+.comment         { margin-left: 10px; }
+.comment:before  {
+    border-right: 10px solid #dddddd;
+    border-style: solid;
+    border-width: 10px;
+    color: rgba(0,0,0,0);
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    left: 51px;
+    top: 12px;
+    width: 0;
+}
+.comment:after   {
+    border-right: 1px solid #f5f5f5;
+    border-style: solid;
+    border-width: 10px;
+    color: rgba(0,0,0,0);
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    left: 53px;
+    top: 12px;
+    width: 0;
+}
+
+
+/*
+|----------------------------------------------------------
+| Sidebar
+|----------------------------------------------------------
+|
+| From Bootstrap docs, with a few adjustments.
+|
+*/
+
+.sidebar {
+    width: 213px;
+}
+h2.widgettitle {
+    font-size: 1.1em;
+    margin: 0 0 6px 0;
+    padding: 0 0 6px 0;
+    border-bottom: 1px dotted #cecece;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #222;
+}
+.widget > ul {
+    list-style-type: none;
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0;
+    padding-bottom: 2px;
+}
+.widget > ul > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #999;
+    border-radius: 0;
+    border-left: 1px solid #563d7c;
+    margin-bottom: 2px;
+}
+.widget > ul > li > a:hover,
+.widget > ul > li > a:focus {
+    padding-left: 19px;
+    color: #563d7c;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 2px solid #563d7c;
+    border-radius: 0;
+}
+.widget > .active > a,
+.widget > .active:hover > a,
+.widget > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #563d7c;
+    background-color: transparent;
+}
+.widget > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.widget > li > a:hover,
+.widget > li > a:focus {
+    padding-left: 29px;
+}
+.widget > .active > a,
+.widget > .active:hover > a,
+.widget > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+.widget > ul > li.recentcomments {
+    display: block;
+    padding: 4px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #999;
+    border-radius: 0;
+    border-left: 1px solid #563d7c;
+    margin-bottom: 2px;
+}
+.widget > ul > li.recentcomments:hover {
+    border-left: 2px solid #563d7c;
+}
+.widget > ul > li.recentcomments > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #000;
+    border: 0;
+    margin-bottom: 2px;
+}
+.widget > ul > li.recentcomments > a:hover {
+    border: 0;
+    text-decoration: underline;
+}
