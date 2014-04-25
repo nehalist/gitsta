@@ -3,7 +3,7 @@
     <head>
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?= get_bloginfo('name'); ?><?php wp_title(); ?></title>
+        <title><?php echo get_bloginfo('name'); ?><?php wp_title(); ?></title>
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         
         <!-- Bootstrap and Font Awesome -->
@@ -11,7 +11,7 @@
         <link href="<?php echo get_template_directory_uri(); ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         
         <!-- Theme style -->
-        <link href="<?= bloginfo('stylesheet_url'); ?>" rel="stylesheet">
+        <link href="<?php echo bloginfo('stylesheet_url'); ?>" rel="stylesheet">
         
         <?php
         if(is_singular()) {
