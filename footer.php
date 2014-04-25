@@ -22,8 +22,8 @@
     <script>
     // Load RequireJS
     require({
-        baseUrl: "<?php bloginfo('template_url'); ?>/",
-    }, ['<?php bloginfo('template_url'); ?>/js/main.js?t=<?php time(); ?>']);
+        baseUrl: "<?php get_template_directory_uri(); ?>/",
+    }, ['<?php get_template_directory_uri(); ?>/js/main.js?t=<?php time(); ?>']);
     </script>
 </body>
 </html>
