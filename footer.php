@@ -18,12 +18,12 @@
 
     <?php wp_footer(); ?>
 
-    <script src="<?php bloginfo('template_url'); ?>/js/require.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/require.js"></script>
     <script>
     // Load RequireJS
     require({
-        baseUrl: "<?php get_template_directory_uri(); ?>/",
-    }, ['<?php get_template_directory_uri(); ?>/js/main.js?t=<?php time(); ?>']);
+        baseUrl: "<?php echo get_template_directory_uri(); ?>/",
+    }, ['<?php echo get_template_directory_uri(); ?>/js/main.js?t=<?php time(); ?>']);
     </script>
 </body>
 </html>

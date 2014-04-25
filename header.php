@@ -7,11 +7,11 @@
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         
         <!-- Bootstrap and Font Awesome -->
-        <link href="<?php get_template_directory_uri(); ?>/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href="<?php get_template_directory_uri(); ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?php echo get_template_directory_uri(); ?>/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="<?php echo get_template_directory_uri(); ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         
         <!-- Theme style -->
-        <link href="<?php get_template_directory_uri(); ?>" rel="stylesheet">
+        <link href="<?= bloginfo('stylesheet_url'); ?>" rel="stylesheet">
         
         <?php
         if(is_singular()) {
@@ -34,7 +34,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     
-                    <a class="navbar-brand" href="<?php echo get_home_url(); ?>"><?php get_bloginfo('name'); ?></a>
+                    <a class="navbar-brand" href="<?php echo get_home_url(); ?>"><?php bloginfo('name'); ?></a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <?php
