@@ -10,19 +10,19 @@
         </div>
 
         <div class="media-body comment">
-            <div class="media-body-wrap panel panel-default <?= (($comment->comment_approved == 0) ? 'panel-warning' : ''); ?> comment">
+            <div class="media-body-wrap panel panel-default <?php echo (($comment->comment_approved == 0) ? 'panel-warning' : ''); ?> comment">
                 <div class="panel-heading">
-                    <b><?= $comment->comment_author; ?></b>
+                    <b><?php echo $comment->comment_author; ?></b>
                     
                     <?php
                     if($comment->comment_author_url != ""):
                     ?>
-                    <a href="<?= $comment->comment_author_url; ?>" target="_blank" data-toggle="tooltip" data-placement="bottom" title="<?= $comment->comment_author_url; ?>"><i class="fa fa-home"></i></a>
+                    <a href="<?php echo $comment->comment_author_url; ?>" target="_blank" data-toggle="tooltip" data-placement="bottom" title="<?php echo $comment->comment_author_url; ?>"><i class="fa fa-home"></i></a>
                     <?php
                     endif;
                     ?>
                     
-                    <span class="text-muted"><small><?= ThemeComments::timeElapsedString($comment->comment_date); ?></small></span>
+                    <span class="text-muted"><small><?php echo ThemeComments::timeElapsedString($comment->comment_date); ?></small></span>
 
                     <span class="pull-right">
                         <?php echo edit_comment_link('Edit', '', ' /'); ?>
