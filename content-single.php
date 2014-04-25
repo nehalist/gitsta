@@ -18,7 +18,11 @@
         </p>
     </div>
     <div class="post-content">
-        <?php 
+        <?php
+        if(has_post_thumbnail()) {
+            the_post_thumbnail();
+        }
+        
         the_content();
         ?>
     </div>

@@ -16,8 +16,9 @@ if( ! isset($content_width)) {
     $content_width = 1020;
 }
 
-// Theme support for automatic feed links
+// Theme support
 add_theme_support('automatic-feed-links');
+add_theme_support('post-thumbnails');
 
 
 /*
