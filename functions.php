@@ -11,6 +11,11 @@ require_once 'inc/Comments.php';
 // by Johnny Megahan <http://johnmegahan.me/>
 add_action('after_setup_theme', 'bootstrap_setup');
 
+// Content width - required by WordPress
+if( ! isset($content_width)) {
+    $content_width = 1020;
+}
+
 
 /*
 |----------------------------------------------------------
