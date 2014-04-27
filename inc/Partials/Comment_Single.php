@@ -22,7 +22,7 @@
                     endif;
                     ?>
                     
-                    <span class="text-muted"><small><?php echo ThemeComments::timeElapsedString($comment->comment_date); ?></small></span>
+                    <span class="text-muted"><small><?php echo Gitsta_ThemeComments::timeElapsedString($comment->comment_date); ?></small></span>
 
                     <span class="pull-right">
                         <?php echo edit_comment_link('Edit', '', ' /'); ?>

@@ -1,5 +1,5 @@
 <?php
-class ThemeComments {
+class Gitsta_ThemeComments {
     
     public static function format($comment, $args, $depth)
     {

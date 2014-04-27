@@ -30,7 +30,7 @@ if(post_password_required()) {
         <?php
         // Comments
         // see inc/Comments.php, inc/Partials/*.php
-        wp_list_comments(array('callback' => 'ThemeComments::format', 'avatar_size' => 50));
+        wp_list_comments(array('callback' => 'Gitsta_ThemeComments::format', 'avatar_size' => 50));
         ?>
     </ol>
 

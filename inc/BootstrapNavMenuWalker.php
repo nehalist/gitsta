@@ -1,7 +1,7 @@
 <?php
-if (!function_exists('bootstrap_setup')):
+if (!function_exists('gitsta_bootstrap_setup')):
 
-    function bootstrap_setup()
+    function gitsta_bootstrap_setup()
     {
         add_action('init', 'register_menu');
 
@@ -12,7 +12,7 @@ if (!function_exists('bootstrap_setup')):
 
         class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
 
-            function start_lvl(&$output, $depth)
+            function start_lvl(&$output, $depth = 0, $args = array())
             {
                 $indent = str_repeat("\t", $depth);
                 $output .= "\n$indent<ul class=\"dropdown-menu\">\n";

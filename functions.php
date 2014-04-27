@@ -9,7 +9,7 @@ require_once 'inc/Comments.php';
 */
 // Bootstrap menu walker
 // by Johnny Megahan <http://johnmegahan.me/>
-add_action('after_setup_theme', 'bootstrap_setup');
+add_action('after_setup_theme', 'gitsta_bootstrap_setup');
 
 // Content width - required by WordPress
 if( ! isset($content_width)) {
@@ -19,6 +19,19 @@ if( ! isset($content_width)) {
 // Theme support
 add_theme_support('automatic-feed-links');
 add_theme_support('post-thumbnails');
+
+// Title hook
+add_action('wp_title', function($title) {
+    return get_bloginfo('name') . $title;
+});
+
+// Scripts and styles used by the theme
+add_action('wp_enqueue_scripts', function() {
+    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.min.css');
+    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/vendor/font-awesome/css/font-awesome.min.css');
+    
+    wp_enqueue_script('require-js', get_template_directory_uri() . '/js/require.js');
+});
 
 
 /*
