@@ -4,7 +4,14 @@
     </h3>
     <div name="meta">
         <p class="text-muted">
-            <i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
+            <i class="fa fa-calendar"></i>
+            <?php
+            if(trim(get_the_title()) != "") {
+                echo get_the_date(); 
+            } else {
+                echo '<a href="'. get_the_permalink() .'" name="'. get_the_ID() .'" rel="bookmark">'. get_the_date() .'</a>';
+            }
+            ?>
 
             <i class="fa fa-folder-open" style="margin-left: 20px;"></i> 
             <?php
@@ -12,15 +19,15 @@
             ?>
 
             <?php
-            echo get_the_tag_list('<i class="fa fa-tags" style="margin-left: 20px;"></i> ',', ');
-            ?>
-            
-            <?php
             if(comments_open()):
             ?>
             <i class="fa fa-comments" style="margin-left: 20px;"></i> <a href="<?php the_permalink(); ?>#comments"><?php comments_number('No comments', '1 comment', '% comments'); ?></a>
             <?php
             endif;
+            ?>
+
+            <?php
+            echo get_the_tag_list('<i class="fa fa-tags" style="margin-left: 20px;"></i> ',', ');
             ?>
         </p>
     </div>

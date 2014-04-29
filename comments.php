@@ -49,9 +49,9 @@ if(post_password_required()) {
 // Comment form
 if(comments_open()):
 ?>
-
-<div class="comment-body media">
-    <a class="pull-left" href="#">
+<a name="respond"></a>
+<div class="comment-body media" id="respond">
+    <div class="pull-left" href="#">
         <?php
         // Show avatar for logged users
         
@@ -60,7 +60,7 @@ if(comments_open()):
         
         echo get_avatar($current_user->user_email, 50); 
         ?>
-    </a>
+    </div>
 
     <div class="media-body comment">
         <div class="media-body-wrap panel panel-default comment">
@@ -68,10 +68,10 @@ if(comments_open()):
                 <ul class="nav nav-tabs" style="position: relative; top: 1px;">
                     <li class="active"><a href="#write" data-toggle="tab"><i class="fa fa-pencil"></i> Reply</a></li>
                     <?php
-                    $theme_options = get_option('gitsta_theme_options');
+                    $gitsta_theme_options = get_option('gitsta_theme_options');
                     
                     // These tabs are hidden, if markdown support option is disabled
-                    if(isset($theme_options['comment_markdown_support']) && $theme_options['comment_markdown_support'] == 1):
+                    if(isset($gitsta_theme_options['comment_markdown_support']) && $gitsta_theme_options['comment_markdown_support'] == 1):
                     ?>
                     <li><a href="#preview" data-toggle="tab" class="preview-reply"><i class="fa fa-eye"></i> Preview</a></li>
                     <li><a href="#help" data-toggle="tab" class="preview-reply"><i class="fa fa-question"></i> Help</a></li>
@@ -84,17 +84,21 @@ if(comments_open()):
                 <div class="tab-content">
                     <div id="write" class="tab-pane active">
                         <?php
-                        $author = '<div class="row">
+                        $gitsta_form_commenter  = wp_get_current_commenter();
+                        $gitsta_form_req        = get_option('require_name_email');
+                        $gitsta_form_aria_req   = ($req ? " aria-required='true'" : '');
+                        
+                        $gitsta_form_author = '<div class="row">
                                 <div class="col-md-4">
-                                    <input class="form-control" placeholder="Name" id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' />
+                                    <input class="form-control" placeholder="Name" id="author" name="author" type="text" value="' . esc_attr($gitsta_form_commenter['comment_author']) . '" size="30"' . $gitsta_form_aria_req . ' />
                             </div>';
 
-                        $mail = '<div class="col-md-4">
-                                <input class="form-control" placeholder="E-Mail" id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' />
+                        $gitsta_form_mail = '<div class="col-md-4">
+                                <input class="form-control" placeholder="E-Mail" id="email" name="email" type="text" value="' . esc_attr($gitsta_form_commenter['comment_author_email']) . '" size="30"' . $gitsta_form_aria_req . ' />
                             </div>';
 
-                        $url = '<div class="col-md-4">
-                                <input class="form-control" placeholder="URL" id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author_url']) . '" size="30"' . $aria_req . ' />
+                        $gitsta_form_url = '<div class="col-md-4">
+                                <input class="form-control" placeholder="URL" id="url" name="url" type="text" value="' . esc_attr($gitsta_form_commenter['comment_author_url']) . '" size="30" />
                             </div>
                         </div><!-- /row -->';
 
@@ -106,13 +110,13 @@ if(comments_open()):
                             'label_submit'          => 'Post comment',
                             'fields'                => array(
                                 'author' =>
-                                $author,
+                                $gitsta_form_author,
                                 
                                 'email' =>
-                                $mail,
+                                $gitsta_form_mail,
                                 
                                 'url' =>
-                                $url
+                                $gitsta_form_url
                             ),
                             'comment_field'         => '<br><p><textarea placeholder="Markdown enabled" id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
                             'comment_notes_after'   => '',
@@ -123,7 +127,7 @@ if(comments_open()):
                     
                     <?php
                     // These tabs are hidden, if markdown support option is disabled
-                    if(isset($theme_options['comment_markdown_support']) && $theme_options['comment_markdown_support'] == 1):
+                    if(isset($gitsta_theme_options['comment_markdown_support']) && $gitsta_theme_options['comment_markdown_support'] == 1):
                     ?>
                     
                     <div id="preview" class="tab-pane">

@@ -10,7 +10,7 @@
         <link href="<?php echo bloginfo('stylesheet_url'); ?>" rel="stylesheet">
         
         <?php
-        if(is_singular()) {
+        if(is_singular() && get_option('thread_comments')) {
             wp_enqueue_script('comment-reply');
         }
         
@@ -35,14 +35,17 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <?php
                     // Navigation
-                    $args = array(
-                        'depth'         => 0,
-                        'container'     => false,
-                        'menu_class'    => 'nav navbar-nav',
-                        'walker'        => new Bootstrap_Walker_Nav_Menu()
+                    $gitsta_nav_args = array(
+                        'theme_location' => 'top-bar',
+                        'menu'           => 'primary',
+                        'depth'          => 2,
+                        'container'      => false,
+                        'menu_class'     => 'nav navbar-nav',
+                        'walker'         => new Bootstrap_Walker_Nav_Menu(),
+                        'fallback_cb'    => 'Bootstrap_Walker_Nav_Menu::fallback',
                     );
 
-                    wp_nav_menu($args);
+                    wp_nav_menu($gitsta_nav_args);
                     
                     // see searchform.php
                     get_search_form();

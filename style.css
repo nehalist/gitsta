@@ -4,7 +4,7 @@ Theme URI: https://github.com/HirczyK/gitsta
 Author: Kevin Hirczy
 Author URI: http://doecode.net
 Description: Simple but pretty wordpress theme, insipred by GitHub.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white,responsive-layout,theme-options,custom-menu,threaded-comments
@@ -16,7 +16,6 @@ Tags: white,responsive-layout,theme-options,custom-menu,threaded-comments
 | Global
 |----------------------------------------------------------
 */
-
 body            { padding-top: 70px; }
 code            { background-color: #f5f5f5 !important; }
 img#wpstats     { display: none; }
@@ -32,6 +31,9 @@ pre > code      {
     text-align: justify;
 }
 div.item        { margin-bottom: 50px; }
+.post-content div {
+    max-width: 100% !important;
+}
 
 
 /*
@@ -40,7 +42,7 @@ div.item        { margin-bottom: 50px; }
 |----------------------------------------------------------
 */
 .wp-caption         { }
-.wp-caption-text    { }
+.wp-caption-text    { color: #999; }
 .sticky             { }
 .gallery-caption    { }
 .bypostauthor       { }
@@ -67,7 +69,6 @@ a img.aligncenter   { display: block; margin-left: auto; margin-right: auto; }
 | Subhead
 |----------------------------------------------------------
 */
-
 .subhead    {
     position: relative;
     bottom: 19px;
@@ -89,10 +90,9 @@ a img.aligncenter   { display: block; margin-left: auto; margin-right: auto; }
 | Comments
 |----------------------------------------------------------
 */
-
-.comment-body    { position: relative; }
-.comment         { margin-left: 10px; }
-.comment:before  {
+li .comment-body    { position: relative; }
+li .comment         { margin-left: 10px; }
+li .comment:before  {
     border-right: 10px solid #dddddd;
     border-style: solid;
     border-width: 10px;
@@ -105,7 +105,7 @@ a img.aligncenter   { display: block; margin-left: auto; margin-right: auto; }
     top: 12px;
     width: 0;
 }
-.comment:after   {
+li .comment:after   {
     border-right: 1px solid #f5f5f5;
     border-style: solid;
     border-width: 10px;
@@ -128,7 +128,6 @@ a img.aligncenter   { display: block; margin-left: auto; margin-right: auto; }
 | From Bootstrap docs, with a few adjustments.
 |
 */
-
 .sidebar {
     width: 213px;
 }
@@ -141,6 +140,9 @@ h2.widgettitle {
     text-transform: uppercase;
     color: #222;
 }
+.widget {
+    margin-bottom: 16px;
+}
 .widget > ul {
     list-style-type: none;
     margin: 0;
@@ -149,7 +151,7 @@ h2.widgettitle {
     padding-bottom: 2px;
 }
 .widget > ul > li > a {
-    display: block;
+    display: inline-block;
     padding: 4px 20px;
     font-size: 13px;
     font-weight: 500;
@@ -192,7 +194,6 @@ h2.widgettitle {
     padding-left: 28px;
     font-weight: 500;
 }
-
 .widget > ul > li.recentcomments {
     display: block;
     padding: 4px 20px;
@@ -205,6 +206,7 @@ h2.widgettitle {
 }
 .widget > ul > li.recentcomments:hover {
     border-left: 2px solid #563d7c;
+    padding: 4px 19px;
 }
 .widget > ul > li.recentcomments > a {
     display: block;
@@ -218,4 +220,10 @@ h2.widgettitle {
 .widget > ul > li.recentcomments > a:hover {
     border: 0;
     text-decoration: underline;
+}
+.widget table#wp-calendar {
+    width: 100%;
+}
+.widget .textwidget {
+    font-size: 13px;
 }

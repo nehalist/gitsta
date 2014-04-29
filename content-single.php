@@ -11,9 +11,9 @@
             <?php
             echo get_the_tag_list('<i class="fa fa-tags" style="margin-left: 20px;"></i> ',', ');
             ?>
-            
+
             <span class="pull-right">
-                 <?php edit_post_link('Edit'); ?> 
+                 <?php edit_post_link('<i class="fa fa-edit"></i> Edit'); ?> 
             </span>
         </p>
     </div>

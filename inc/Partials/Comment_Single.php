@@ -1,4 +1,4 @@
-<li id="comment-<?php comment_ID(); ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>">
+<li id="comment-<?php comment_ID(); ?>" <?php comment_class(empty($args['has_children']) ? '' : 'parent'); ?>>
     <article id="div-comment-<?php comment_ID(); ?>" class="comment-body media">
         <div class="pull-left">
             <?php
@@ -25,12 +25,12 @@
                     <span class="text-muted"><small><?php echo Gitsta_ThemeComments::timeElapsedString($comment->comment_date); ?></small></span>
 
                     <span class="pull-right">
-                        <?php echo edit_comment_link('Edit', '', ' /'); ?>
-                        <?php echo get_comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => 'Reply'))); ?>
+                        <?php echo edit_comment_link('<i class="fa fa-edit"></i> Edit'); ?>
+                        <?php echo get_comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => '<i class="fa fa-reply"></i> Reply'))); ?>
                     </span>
 
                     <?php if ($comment->comment_approved == 0) : ?>
-                        <p class="pull-right text-muted"><?php _e('Your comment is awaiting moderation.', '_tk'); ?> </p>
+                        <p class="pull-right text-muted">Your comment is awaiting moderation.&nbsp;</p>
                     <?php endif; ?>
                 </div>
 

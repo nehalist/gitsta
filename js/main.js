@@ -1,8 +1,18 @@
+/*
+|----------------------------------------------------------
+| Gitsta JavaScript
+|----------------------------------------------------------
+*/
+
+require({
+    baseUrl: theme.template_directory_uri
+});
+
 requirejs.config({
     paths: {
         'jquery':                 'vendor/jquery',
         'marked':                 'vendor/marked',
-        'bootstrap':              'vendor/bootstrap/js/bootstrap.min'
+        'bootstrap':              'vendor/bootstrap/js/bootstrap'
     },
     
     shim: {
@@ -53,17 +63,33 @@ require(['jquery', 'marked', 'bootstrap'],
                 $('#markdown-preview').html(preview);
             });
             
+            // Bootstrap fixed header fix
+            var navbar = $('.navbar-fixed-top');
+            var top    = 70; // for affix scrolling
+            if(navbar.height() > 51) {
+                $('body').css('padding-top', navbar.height() + 21);
+                top = navbar.height() + 10;
+            }
+            
             // Affix scroll
             function fixDiv() {
                 var $cache = $('.affix');
-                
-                if ($(window).scrollTop() > 70)
-                    $cache.css({'position': 'fixed', 'top': '70px'});
-                else
+
+                if ($(window).scrollTop() > navbar.height() - 10) {
+                    $cache.css({'position': 'fixed', 'top': top + 'px'});
+                } else {
                     $cache.css({'position': 'relative', 'top': 'auto'});
+                }
             }
-            $(window).scroll(fixDiv);
-            fixDiv();
+                
+            if($('.affix').height() < $(window).height()) {
+                $(window).scroll(fixDiv);
+                fixDiv();
+            } else {
+                // Disable fixed position on affix if sidebar height is greater
+                // than window height
+                $('.affix').css('position', 'static');
+            }
             
             // Enable tooltips
             $('*[data-toggle="tooltip"]').tooltip({
