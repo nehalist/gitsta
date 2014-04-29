@@ -171,8 +171,8 @@ more code</pre>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>[Link](http://www.doecode.net)</td>
-                                    <td><a href="http://www.doecode.net">Link</a></td>
+                                    <td>[Link](http://www.example.com)</td>
+                                    <td><a href="http://www.example.com">Link</a></td>
                                 </tr>
                                 <tr>
                                     <td>* Listitem</td>

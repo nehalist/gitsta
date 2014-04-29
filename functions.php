@@ -13,6 +13,7 @@ add_action('after_setup_theme', 'gitsta_bootstrap_setup');
 */
 add_action('after_setup_theme', function() {
     // Content width - required by WordPress
+    global $content_width;
     if( ! isset($content_width)) {
         $content_width = 945;
     }
