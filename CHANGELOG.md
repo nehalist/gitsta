@@ -1,3 +1,12 @@
+Version 1.0.5
+------
+* Fixed syntax error `content.php` and `content-single.php`
+
+Version 1.0.4
+------
+* Removed author url from comment form
+* Added `global $content_width`
+
 Version 1.0.3
 ------
 * Posts without title now have a permalink on their post date
