@@ -4,7 +4,7 @@ Theme URI: https://github.com/HirczyK/gitsta
 Author: Kevin Hirczy
 Author URI: http://doecode.net
 Description: Simple but pretty wordpress theme, insipred by GitHub.
-Version: 1.0.4
+Version: 1.1.0-dev
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white,responsive-layout,theme-options,custom-menu,threaded-comments
@@ -33,6 +33,52 @@ pre > code      {
 div.item        { margin-bottom: 50px; }
 .post-content div {
     max-width: 100% !important;
+}
+
+
+/*
+|----------------------------------------------------------
+| Code
+|----------------------------------------------------------
+*/
+div.code-box {
+    background-color: #eee;
+    border-radius: 3px;
+    padding: 3px;
+    margin-bottom: 18px;
+}
+
+div.code-box div.syntaxhighlighter {
+    margin: 0 !important;
+    width: 100% !important;
+    border: 1px solid #cccccc !important;
+}
+
+.syntaxhighlighter .line .content {
+    border-left: 0 !important;
+}
+
+div.code-box div.code-title {
+    border: 1px solid #cccccc;
+    border-bottom: 0 !important;
+    background-color: #fafafa;
+    color:#555;
+    font-size:12px;
+    padding: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+div.code-box pre {
+    max-height: 350px !important;
+    overflow-y: auto;
+}
+
+pre {
+    border: 1px solid #cccccc !important;
+    border-radius: 0 !important;
+    background-color: #fff !important;
+    margin: 0 !important;
 }
 
 

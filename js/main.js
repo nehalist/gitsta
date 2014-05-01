@@ -95,6 +95,17 @@ require(['jquery', 'marked', 'bootstrap'],
             $('*[data-toggle="tooltip"]').tooltip({
                 placement: 'bottom'
             });
+            
+            // Search input growth
+            var searchInput = $('#s');
+            var searchInputWidth = searchInput.width();
+            searchInput.focus(function() {
+                // Grow on focus
+                $(this).animate({ width: (searchInputWidth + 150) }, 'slow');
+            }).blur(function() {
+                // Shrink on blur
+                $(this).animate({ width: searchInputWidth + 26 }, 'slow');
+            });
         });
     }
 );
