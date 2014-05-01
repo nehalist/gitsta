@@ -52,6 +52,8 @@ div.code-box div.syntaxhighlighter {
     margin: 0 !important;
     width: 100% !important;
     border: 1px solid #cccccc !important;
+    max-height: 350px;
+    overflow-y: scroll;
 }
 
 .syntaxhighlighter .line .content {
@@ -79,6 +81,10 @@ pre {
     border-radius: 0 !important;
     background-color: #fff !important;
     margin: 0 !important;
+}
+
+pre code {
+    background-color: #fff !important;
 }
 
 
