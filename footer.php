@@ -9,7 +9,7 @@
                 <div class="col-md-6 text-right">
                     <small class="text-muted">
                         &copy; <strong><?php echo get_bloginfo('name'); ?></strong><br>
-                        Theme by <a href="http://www.doecode.net" target="_blank">doecode.net</a> <!-- Please do not remove this line - thanks :-) -->
+                        Theme by <a href="http://www.doecode.net" target="_blank">doecode.net</a>
                     </small>
                 </div>
             </div>
