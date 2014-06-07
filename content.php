@@ -1,13 +1,13 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class('item'); ?>>
-    <h3 style="margin-top: 0;">
-        <a href="<?php the_permalink(); ?>" name="<?php the_ID(); ?>" rel="bookmark"><?php the_title(); ?></a>
-    </h3>
+    <h2 style="margin-top: 0;">
+        <a href="<?php the_permalink(); ?>" name="<?php the_ID(); ?>" rel="bookmark" class="post-title"><?php the_title(); ?></a>
+    </h2>
     <div name="meta">
         <p class="text-muted">
             <i class="fa fa-calendar"></i>
             <?php
             if(trim(get_the_title()) != "") {
-                echo get_the_date(); 
+                echo get_the_date();
             } else {
                 echo '<a href="'. get_the_permalink() .'" name="'. get_the_ID() .'" rel="bookmark">'. get_the_date() .'</a>';
             }

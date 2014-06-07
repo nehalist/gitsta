@@ -115,6 +115,19 @@ add_action('after_setup_theme', function() {
         return $tag;
     });
     
+    // Code tags
+    add_filter('the_content', function($content) {
+        $pattern        = "/<pre(.*?)>/i";
+        $replacement    = '<div class="code-box"><div class="code-title"><i class="fa fa-code"></i> <div class="pull-right"><a href="#" class="btn btn-default btn-xs toggle-code" data-toggle="tooltip" title="Toggle code"><i class="fa fa-toggle-up"></i></a></div></div><pre $1>';
+        $content        = preg_replace($pattern, $replacement, $content);
+       
+        $pattern        = "/<\/pre>/";
+        $replacement    = '</pre></div>';
+        $content        = preg_replace($pattern, $replacement, $content);
+        
+        return $content;
+    });
+    
     
     /*
     |----------------------------------------------------------
