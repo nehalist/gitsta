@@ -3,8 +3,8 @@ Theme Name: gitsta
 Theme URI: https://github.com/HirczyK/gitsta
 Author: Kevin Hirczy
 Author URI: http://doecode.net
-Description: Simple but pretty wordpress theme, insipred by GitHub.
-Version: 1.1.0-dev
+Description: Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. Mainly designed for programmers, but suitable for any bloggers.
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white,responsive-layout,theme-options,custom-menu,threaded-comments
@@ -28,13 +28,26 @@ pre > code      {
 }
 .post-content   {
     line-height: 1.8em;
-    text-align: justify;
 }
 div.item        { margin-bottom: 50px; }
 .post-content div {
     max-width: 100% !important;
 }
 
+
+/*
+|----------------------------------------------------------
+| Typography
+|----------------------------------------------------------
+*/
+.post-content h2 {
+    font-size: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+.post-content h3 {
+    font-size: 19px;
+}
 
 /*
 |----------------------------------------------------------
@@ -52,6 +65,7 @@ div.code-box div.syntaxhighlighter {
     margin: 0 !important;
     width: 100% !important;
     border: 1px solid #cccccc !important;
+    border-top: 0px !important;
     max-height: 350px;
     overflow-y: scroll;
 }
@@ -62,22 +76,24 @@ div.code-box div.syntaxhighlighter {
 
 div.code-box div.code-title {
     border: 1px solid #cccccc;
-    border-bottom: 0 !important;
     background-color: #fafafa;
     color:#555;
     font-size:12px;
-    padding: 5px;
     padding-left: 12px;
     padding-right: 12px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 div.code-box pre {
+    clear: both;
     max-height: 350px !important;
     overflow-y: auto;
 }
 
 pre {
     border: 1px solid #cccccc !important;
+    border-top: 0 !important;
     border-radius: 0 !important;
     background-color: #fff !important;
     margin: 0 !important;

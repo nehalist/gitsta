@@ -45,6 +45,19 @@ require(['jquery', 'marked', 'bootstrap'],
                 }
             });
             
+            // Source code toggling
+            $('a.toggle-code').click(function(e) {
+                e.preventDefault();
+                
+                $(this).find('i').toggleClass('fa-toggle-up fa-toggle-down');
+                
+                // Toggle pre tags
+                $(this).parentsUntil('.code-box').next('pre').slideToggle();
+                
+                // Toggle syntaxhighlighter div
+                $(this).parentsUntil('.code-box').next('.syntaxhighlighter').slideToggle();
+            });
+            
             // Enable bootstrap tabs
             $('a[data-toggle="tab"]').click(function(e) {
                 e.preventDefault();
