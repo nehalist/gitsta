@@ -124,6 +124,7 @@ pre code {
 | from https://codex.wordpress.org/Styling_Images_in_Posts_and_Pages 
 |
 */
+img                 { max-width: 100%; height: auto; }
 img.alignright      { float:right; margin:0 0 1em 1em; }
 img.alignleft       { float:left; margin:0 1em 1em 0; }
 img.aligncenter     { display: block; margin-left: auto; margin-right: auto; }
