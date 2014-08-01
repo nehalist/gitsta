@@ -54,6 +54,12 @@
                     <?php get_template_part('content', 'none'); ?>
 
                 <?php endif; ?>
+                
+                <?php wp_link_pages(); ?>
+                <ul class="pager">
+                    <li class="previous"><?php next_posts_link( 'Older posts' ); ?></li>
+                    <li class="next"><?php previous_posts_link( 'Newer posts' ); ?></li>
+                </ul>
             </div>
             <div class="col-md-2">
                 <?php get_sidebar(); ?>
