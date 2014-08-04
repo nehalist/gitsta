@@ -53,6 +53,7 @@ add_action('after_setup_theme', function() {
         wp_enqueue_style('bootstrap', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.css');
         wp_enqueue_style('font-awesome', get_template_directory_uri() . '/vendor/font-awesome/css/font-awesome.css');
 
+        wp_enqueue_script('jquery');
         wp_enqueue_script('require-js', get_template_directory_uri() . '/vendor/require.js');
         wp_enqueue_script('gitsta-main-js', get_template_directory_uri() . '/js/main.js');
         

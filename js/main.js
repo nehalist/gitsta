@@ -10,23 +10,18 @@ require({
 
 requirejs.config({
     paths: {
-        'jquery':                 'vendor/jquery',
         'marked':                 'vendor/marked',
         'bootstrap':              'vendor/bootstrap/js/bootstrap'
-    },
-    
-    shim: {
-        'bootstrap': {
-            deps: ['jquery']
-        }
     }
 });
 
-require(['jquery', 'marked', 'bootstrap'],
-    function($, marked) {
+require(['marked', 'bootstrap'],
+    function(marked) {
         'use strict';
         
-        $(function() {
+        jQuery(function() {
+            $ = jQuery;
+            
             // Smooth scrolling
             // by http://css-tricks.com/snippets/jquery/smooth-scrolling/
             // Blame the dynamic sidebar its just for the "Back to top"-Link :'(...
