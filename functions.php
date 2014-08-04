@@ -3,8 +3,29 @@ require_once 'inc/BootstrapNavMenuWalker.php';
 require_once 'inc/Comments.php';
 
 // Bootstrap menu walker
-// by Johnny Megahan <http://johnmegahan.me/>
+// by @johnmegahan <http://johnmegahan.me/>
 add_action('after_setup_theme', 'gitsta_bootstrap_setup');
+
+// TGM Plugin Activation <http://tgmpluginactivation.com/>
+// Thanks to @EmilUzelac
+require_once 'inc/Vendor/class-tgm-plugin-activation.php';
+add_action('tgmpa_register', function() {
+    $plugins = array(
+        array(
+            'name'      => 'WP-Markdown',
+            'slug'      => 'wp-markdown',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Gust',
+            'slug'      => 'gust',
+            'required'  => false
+        )
+    );
+    
+    tgmpa($plugins);
+});
+
 
 /*
 |----------------------------------------------------------
@@ -17,7 +38,7 @@ add_action('after_setup_theme', function() {
     if( ! isset($content_width)) {
         $content_width = 945;
     }
-
+    
     // Theme support
     add_theme_support('automatic-feed-links');
     add_theme_support('post-thumbnails');
@@ -37,8 +58,8 @@ add_action('after_setup_theme', function() {
         
         wp_localize_script('gitsta-main-js', 'theme', array('template_directory_uri' => get_template_directory_uri()));
     });
-
-
+    
+    
     /*
     |----------------------------------------------------------
     | Sidebar
