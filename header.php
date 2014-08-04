@@ -57,10 +57,10 @@
                         ?>
                         <a href="#" class="btn navbar-btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Anonymous <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo home_url(); ?>/wp-login.php" href="#login">Login</a></li>
+                            <li><a href="<?php echo wp_login_url(); ?>" href="#login">Login</a></li>
                             <li class="divider"></li>
-                            <li><a href="<?php echo home_url(); ?>/wp-register.php">Register</a></li>
-                            <li><a href="<?php echo home_url(); ?>/wp-login.php?action=lostpassword">Lost password</a></li>
+                            <li><a href="<?php echo wp_login_url(get_permalink()); ?>">Register</a></li>
+                            <li><a href="<?php echo wp_lostpassword_url(); ?>">Lost password</a></li>
                         </ul>
                         
                         <?php
@@ -70,14 +70,14 @@
                         ?>
                         <a href="#" class="btn navbar-btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $current_user->user_login; ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo home_url(); ?>/wp-admin/">Dashboard</a></li>
+                            <li><a href="<?php echo admin_url(); ?>">Dashboard</a></li>
 
                             <?php
                             // A link for gust, if installed
                             include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
                             if(current_user_can('publish_posts') && is_plugin_active('gust/gust.php')):
                             ?>
-                            <li><a href="<?php echo home_url(); ?>/gust">Gust</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/gust')); ?>">Gust</a></li>
                             <?php
                             endif;
                             ?>
