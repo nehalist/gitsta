@@ -8,7 +8,7 @@ add_action('after_setup_theme', 'gitsta_bootstrap_setup');
 
 // TGM Plugin Activation <http://tgmpluginactivation.com/>
 // Thanks to @EmilUzelac
-require_once 'inc/Vendor/class-tgm-plugin-activation.php';
+require_once 'vendor/class-tgm-plugin-activation.php';
 add_action('tgmpa_register', function() {
     $plugins = array(
         array(
