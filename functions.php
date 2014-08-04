@@ -166,4 +166,63 @@ add_action('after_setup_theme', function() {
             include 'inc/Partials/ThemeOptions.php';
         });
     });
+    
+    
+    /*
+    |----------------------------------------------------------
+    | Custom wp_link_pages function
+    |----------------------------------------------------------
+    */
+    function gitsta_wp_link_pages($args = '') {
+        $defaults = array(
+            'before'           => '',
+            'after'            => '',
+            'prev_and_next'    => true,
+            'nextpagelink'     => '&raquo;',
+            'prevpagelink'     => '&laquo;',
+            'echo'             => true
+        );
+        
+        $r = wp_parse_args($args, $defaults);
+        extract($r, EXTR_SKIP);
+        
+        global $page, $numpages, $multipage, $more;
+        
+        $output = '';
+        if($multipage) {
+            $output .= $before . '<ul class="pagination">';
+            
+            // Attach prev link
+            $i = ($page - 1);
+            if(($i > 0) && $prev_and_next) {
+                $output .= '<li>' . _wp_link_page($i) . $nextpagelink . '</a></li>';
+            }
+            
+            // Attach page numbers
+            for($i = 1; $i <= $numpages; $i++) {
+                $link = '';
+                if($i == $page) {
+                    $link .= '<li class="active"><a href="#">' . $i . '</li>';
+                } else {
+                    $link .= '<li>' . _wp_link_page($i) . $i . '</a></li>';
+                }
+                
+                $link    = apply_filters('wp_link_pages_link', $link, $i);
+                $output .= $link;
+            }
+            
+            // Attach next link
+            $i = ($page + 1);
+            if(($i <= $numpages) && $prev_and_next) {
+                $output .= '<li>' . _wp_link_page($i) . $prevpagelink . '</a></li>';
+            }
+            
+            $output .= '</ul>' . $after;
+        }
+        
+        $output = apply_filters('wp_link_pages', $output, $args);
+        if($echo) {
+            echo $output;
+        }
+    }
 });
