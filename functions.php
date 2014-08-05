@@ -207,7 +207,7 @@ add_action('after_setup_theme', function() {
             // Attach prev link
             $i = ($page - 1);
             if(($i > 0) && $prev_and_next) {
-                $output .= '<li>' . _wp_link_page($i) . $nextpagelink . '</a></li>';
+                $output .= '<li>' . _wp_link_page($i) . $prevpagelink . '</a></li>';
             }
             
             // Attach page numbers
@@ -226,7 +226,7 @@ add_action('after_setup_theme', function() {
             // Attach next link
             $i = ($page + 1);
             if(($i <= $numpages) && $prev_and_next) {
-                $output .= '<li>' . _wp_link_page($i) . $prevpagelink . '</a></li>';
+                $output .= '<li>' . _wp_link_page($i) . $nextpagelink . '</a></li>';
             }
             
             $output .= '</ul>' . $after;
