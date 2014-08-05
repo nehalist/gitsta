@@ -13,18 +13,26 @@ if ( ! isset( $_REQUEST['settings-updated'] ) ) {
     </div>
     <?php endif; ?>
 
-  <form method="post" action="options.php">
+    <form method="post" action="options.php">
         <?php settings_fields('gitsta_options'); ?>
         <?php $gitsta_options = get_option('gitsta_theme_options'); ?>
 
-        <table class="form-table">
+        <table class="wp-list-table widefat pages">
+            <tr class="alternate">
+                <td colspan="2"><h3>Global</h3></td>
+            </tr>
             <tr valign="top">
-                <th scope="row">Comment Markdown Support</th>
-                <td><input id="gitsta_theme_options[comment_markdown_support]" type="checkbox" name="gitsta_theme_options[comment_markdown_support]" value="1" <?php echo (isset($gitsta_options['comment_markdown_support']) && $gitsta_options['comment_markdown_support'] == 1 ? 'checked' : ''); ?> /></td>
-            </tr>  
+                <th scope="row" style="width: 25%;">Comment Markdown Support</th>
+                <td style="width: 75%;"><input id="gitsta_theme_options[comment_markdown_support]" type="checkbox" name="gitsta_theme_options[comment_markdown_support]" value="1" <?php echo (isset($gitsta_options['comment_markdown_support']) && $gitsta_options['comment_markdown_support'] == 1 ? 'checked' : ''); ?> /></td>
+            </tr>
+            <tr valign="top">
+                <th scope="row" style="width: 25%;">Gitsta Native Shortcodes</th>
+                <td style="width: 75%;"><input id="gitsta_theme_options[gitsta_native_shortcodes]" type="checkbox" name="gitsta_theme_options[gitsta_native_shortcodes]" value="1" <?php echo (isset($gitsta_options['gitsta_native_shortcodes']) && $gitsta_options['gitsta_native_shortcodes'] == 1 ? 'checked' : ''); ?> /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><?php submit_button(); ?></td>
+            </tr>
         </table>
-
-        <!-- submit -->
-        <?php submit_button(); ?>
     </form>
 </div>

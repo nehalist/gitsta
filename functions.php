@@ -174,7 +174,10 @@ add_action('after_setup_theme', function() {
     | Shortcodes
     |----------------------------------------------------------
     */
-    include 'inc/Shortcodes.php';
+    $gitsta_theme_options = get_option('gitsta_theme_options');
+    if(isset($gitsta_theme_options['gitsta_native_shortcodes']) && $gitsta_theme_options['gitsta_native_shortcodes'] == 1) {
+        include 'inc/Shortcodes.php';
+    }
     
     
     /*
