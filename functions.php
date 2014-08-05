@@ -8,7 +8,7 @@ add_action('after_setup_theme', 'gitsta_bootstrap_setup');
 
 // TGM Plugin Activation <http://tgmpluginactivation.com/>
 // Thanks to @EmilUzelac
-require_once 'vendor/class-tgm-plugin-activation.php';
+require_once 'inc/class-tgm-plugin-activation.php';
 add_action('tgmpa_register', function() {
     $plugins = array(
         array(
@@ -52,6 +52,7 @@ add_action('after_setup_theme', function() {
     add_action('wp_enqueue_scripts', function() {
         wp_enqueue_style('bootstrap', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.css');
         wp_enqueue_style('font-awesome', get_template_directory_uri() . '/vendor/font-awesome/css/font-awesome.css');
+        wp_enqueue_style('octicons', get_template_directory_uri() . '/vendor/octicons/css/octicons.css');
 
         wp_enqueue_script('jquery');
         wp_enqueue_script('require-js', get_template_directory_uri() . '/vendor/require.js');
@@ -166,6 +167,14 @@ add_action('after_setup_theme', function() {
             include 'inc/Partials/ThemeOptions.php';
         });
     });
+    
+    
+    /*
+    |----------------------------------------------------------
+    | Shortcodes
+    |----------------------------------------------------------
+    */
+    include 'inc/Shortcodes.php';
     
     
     /*
