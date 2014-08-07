@@ -10,6 +10,10 @@ add_shortcode('sample', function($atts, $content = null) {
     return '<samp>' . $content . '</samp>';
 });
 
+add_shortcode('sample-demo', function($atts) {
+    return '<samp>[sample]Hello World[/sample]</samp>';
+});
+
 
 /*
 |----------------------------------------------------------
@@ -26,12 +30,12 @@ add_shortcode('kbd', function($atts, $content = null) {
 | Abbreviations
 |----------------------------------------------------------
 */
-add_shortcode('abbr', function($atts, $content) {
+add_shortcode('abbr', function($atts, $content = null) {
     extract(shortcode_atts(array(
         'title' => '',
     ), $atts, 'abbr'));
     
-    return '<abbr title="' . $title . '" class="initialism">' . $content . '</abbr>';
+    return '<abbr title="' . $title . '">' . do_shortcode($content) . '</abbr>';
 });
 
 /*
@@ -39,7 +43,7 @@ add_shortcode('abbr', function($atts, $content) {
 | Alignment
 |----------------------------------------------------------
 */
-add_shortcode('align', function($atts, $content) {
+add_shortcode('align', function($atts, $content = null) {
     extract(shortcode_atts(array(
         'dir' => '',
     ), $atts, 'align'));
@@ -52,7 +56,7 @@ add_shortcode('align', function($atts, $content) {
 | Tooltips
 |----------------------------------------------------------
 */
-add_shortcode('tooltip', function($atts, $content) {
+add_shortcode('tooltip', function($atts, $content = null) {
     extract(shortcode_atts(array(
         'title'     => '',
         'placement' => 'top'
@@ -66,7 +70,7 @@ add_shortcode('tooltip', function($atts, $content) {
 | Media object
 |----------------------------------------------------------
 */
-add_shortcode('media', function($atts, $content) {
+add_shortcode('media', function($atts, $content = null) {
     extract(shortcode_atts(array(
         'img'       => '',
         'title'     => '',
@@ -80,13 +84,9 @@ add_shortcode('media', function($atts, $content) {
 |----------------------------------------------------------
 | Progress bars
 |----------------------------------------------------------
-|
-| TODO
 */
-add_shortcode('progress-bar', function($atts) {
+add_shortcode('progress-bar', function($atts, $content = null) {
     extract(shortcode_atts(array(
-        'max'       => 100,
-        'min'       => 0,
         'value'     => 0,
         'label'     => 'true',
         'type'      => ''
@@ -99,34 +99,8 @@ add_shortcode('progress-bar', function($atts) {
     }
     
     return '<div class="progress">
-        <div class="progress-bar ' . ($type != '' ? 'progress-bar-' . $type : '') . '" role="progressbar" aria-valuenow="' . $value . '" aria-valuemin="' . $min . '" aria-valuemax="' . $max . '" style="'. $width . '">
+        <div class="progress-bar ' . ($type != '' ? 'progress-bar-' . $type : '') . '" role="progressbar" aria-valuenow="' . $value . '" aria-valuemin="0" aria-valuemax=100" style="'. $width . '">
             ' . (($label == 'true') ? $value . '%' : '<span class="sr-only">' . $value . '%</span>') . '
-        </div>
-    </div>';
-});
-
-/*
-|----------------------------------------------------------
-| Thumbnails with custom content
-|----------------------------------------------------------
-*/
-add_shortcode('thumbnail', function($atts, $content = null) {
-    extract(shortcode_atts(array(
-        'img'    => '',
-        'width'  => 242,
-        'height' => 200,
-        'alt'    => '',
-        'url'    => ''
-    ), $atts, 'thumbnail'));
-    
-    return '<div class="row">
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="' . $img . '" alt="' . $alt . '">
-                <div class="caption">
-                    ' . do_shortcode($content) . '
-                </div>
-            </div>
         </div>
     </div>';
 });
@@ -175,7 +149,7 @@ add_shortcode('alert', function($atts, $content = null) {
 | Icons
 |----------------------------------------------------------
 */
-add_shortcode('icon', function($atts) {
+add_shortcode('icon', function($atts, $content = null) {
     extract(shortcode_atts(array(
         'family'     => 'fa', // fa, octicon, glyphicon
         'name'       => 'question-circle',
@@ -202,9 +176,6 @@ add_shortcode('icon', function($atts) {
 |----------------------------------------------------------
 | Buttons
 |----------------------------------------------------------
-| 
-| Usage:
-|   [button url="http://www.example.com" type="success" size="xs"]
 */
 add_shortcode('button', function($atts, $content = null) {
     extract(shortcode_atts(array(
@@ -220,12 +191,6 @@ add_shortcode('button', function($atts, $content = null) {
 |----------------------------------------------------------
 | Grid
 |----------------------------------------------------------
-|
-| Usage:
-|   [row]
-|       [col size=6]Column 1[/col]
-|       [col size=6]Column 2[/col]
-|   [/row]
 */
 add_shortcode('row', function($atts, $content = null) {
     return '<div class="row">' . do_shortcode($content) . '</div>';
@@ -243,6 +208,10 @@ add_shortcode('col', function($atts, $content = null) {
     }
     
     return '<div class="col-md-' . $size . '">' . do_shortcode($content) . '</div>';
+});
+
+add_shortcode('grid-demo', function($atts) {
+    return '<samp>[row]<br>[col size="6"]Column 1[/col]<br>[col size="6"]Column 2[/col]<br>[/row]</samp>';
 });
 
 add_filter('the_content', 'wpautop', 12);
