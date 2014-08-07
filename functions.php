@@ -55,6 +55,9 @@ add_action('after_setup_theme', function() {
         wp_enqueue_style('octicons', get_template_directory_uri() . '/vendor/octicons/css/octicons.css');
 
         wp_enqueue_script('jquery');
+        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap.js');
+        wp_enqueue_script('marked', get_template_directory_uri() . '/vendor/marked.js');
+        
         wp_enqueue_script('require-js', get_template_directory_uri() . '/vendor/require.js');
         wp_enqueue_script('gitsta-main-js', get_template_directory_uri() . '/js/main.js');
         
