@@ -1,6 +1,6 @@
 gitsta
 ======
-Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. Mainly designed for programmers, but suitable for any bloggers.
+Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. Mainly designed for programmers, but suitable for any bloggers. With shortcodes for bootstrap and lots of icons (font awesome, octicons and glyphicons)!
 
 ![screenshot](screenshot.png)
 
@@ -10,6 +10,10 @@ Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. 
 - [GitHub Releases](https://github.com/HirczyK/gitsta/releases)
 - [WordPress.org](https://wordpress.org/themes/gitsta)
 
+### Shortcodes
+__To use shortcodes, you must first enable them in theme options!__
+See [Gitsta Shortcodes](http://doecode.net/gitsta-shortcodes/)
+
 ##### Additional
 - Enable markdown support for comments (markdown preview & help) via Admin > Appearance > Gitsta (there aren't that many options :))
 
@@ -17,12 +21,12 @@ Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. 
 * This theme requires at least PHP 5.3, due the usage of closures within the `functions.php`
 * Since this theme was created with markdown in mind, you should use some kind of markdown plugin (I'm pretty satisfied with [WP-Markdown](https://wordpress.org/plugins/wp-markdown/)). If you don't like to use markdown, you can disable the markdown support within the theme settings.
 
-### Issues & Feedback
-Found an issue? Idea for a feature? Feedback? [GitHub Issue Tracker](https://github.com/HirczyK/gitsta/issues) to the rescue!
+### Like the theme?
+Rate it on [WordPress.org](https://wordpress.org/themes/gitsta) or star it on [GitHub](https://github.com/HirczyK/gitsta)! Thanks!
 
-### Thanks to...
-* __Bootstrap__ for an awesome framework
-* __GitHub__ for inspiration
-* __[Marked](https://github.com/chjj/marked)__ for the great markdown parser
-* __Font Awesome__ for free icons
-* __RequireJS__ for... uhm... requiring javascript files!
+### Credits
+* [Bootstrap](http://www.getbootstrap.com)
+* [GitHub](http://www.github.com)
+* [Marked](https://github.com/chjj/marked)
+* [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+* [TGM Plugin Activation](http://tgmpluginactivation.com/)
