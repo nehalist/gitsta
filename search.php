@@ -31,7 +31,7 @@
                 </ul>
             </div>
             <div class="col-md-2">
-                <div class="bs-docs-sidebar with-subhead">
+                <div class="with-subhead">
                     <?php get_sidebar(); ?>
                 </div>
             </div>

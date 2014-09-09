@@ -23,7 +23,7 @@
             <div class="container">
                 <div class="navbar-header">
                     <!-- Nav button for small resolutions -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -32,7 +32,7 @@
                     
                     <a class="navbar-brand" href="<?php echo get_home_url(); ?>"><?php bloginfo('name'); ?></a>
                 </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse" id="main-menu">
                     <?php
                     // Navigation
                     $gitsta_nav_args = array(

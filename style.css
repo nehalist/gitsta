@@ -141,16 +141,15 @@ a img.aligncenter   { display: block; margin-left: auto; margin-right: auto; }
 .subhead    {
     position: relative;
     bottom: 19px;
-    height: 80px;
     border-bottom: 1px #e7e7e7 solid;
     margin-bottom: 15px;
 }
 
 .subhead h3 {
-    margin: 0;
-    padding: 0;
+    margin-top: 26px;
+    margin-bottom: 26px;
     
-    line-height: 80px;
+    padding: 0;
 }
 
 
