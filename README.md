@@ -4,7 +4,7 @@ Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. 
 
 ![screenshot](screenshot.png)
 
-[Live Demo](http://www.doecode.net)
+[Live Demo](http://nehalist.io)
 
 ### Download
 - [GitHub Releases](https://github.com/HirczyK/gitsta/releases)
@@ -12,7 +12,7 @@ Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. 
 
 ### Shortcodes
 __To use shortcodes, you must first enable them in theme options!__
-See [Gitsta Shortcodes](http://doecode.net/gitsta-shortcodes/)
+See [Gitsta Shortcodes](http://nehalist.io/gitsta-shortcodes/)
 
 ##### Additional
 - Enable markdown support for comments (markdown preview & help) via Admin > Appearance > Gitsta (there aren't that many options :))
