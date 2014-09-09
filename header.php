@@ -95,3 +95,16 @@
         </nav>
         <!-- Anchor for "Back to top"-Link -->
         <a name="top"></a>
+        <?php
+        $gitsta_theme_options = get_option('gitsta_theme_options');
+        //if(isset($gitsta_theme_options['comment_markdown_support']) && $gitsta_theme_options['comment_markdown_support'] == 1):
+        if(is_front_page() && (isset($gitsta_theme_options['frontpage_blog_descr']) && $gitsta_theme_options['frontpage_blog_descr'] == 1)):
+        ?>
+        <div class="subhead">
+            <div class="container">
+                <h3><?php echo bloginfo('description'); ?></h3>
+            </div>
+        </div>
+        <?php 
+        endif;
+        ?>
