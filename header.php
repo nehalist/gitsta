@@ -38,11 +38,10 @@
                     $gitsta_nav_args = array(
                         'theme_location' => 'top-bar',
                         'menu'           => 'primary',
-                        'depth'          => 2,
                         'container'      => false,
                         'menu_class'     => 'nav navbar-nav',
-                        'walker'         => new Bootstrap_Walker_Nav_Menu(),
-                        'fallback_cb'    => 'Bootstrap_Walker_Nav_Menu::fallback',
+                        'walker'         => new wp_bootstrap_navwalker(),
+                        'fallback_cb'    => 'wp_bootstrap_navwalker::fallback',
                     );
 
                     wp_nav_menu($gitsta_nav_args);

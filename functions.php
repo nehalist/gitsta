@@ -2,8 +2,7 @@
 require_once 'inc/BootstrapNavMenuWalker.php';
 require_once 'inc/Comments.php';
 
-// Bootstrap menu walker
-// by @johnmegahan <http://johnmegahan.me/>
+// Bootstrap Menu Walker
 add_action('after_setup_theme', 'gitsta_bootstrap_setup');
 
 // TGM Plugin Activation <http://tgmpluginactivation.com/>
