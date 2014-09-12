@@ -11,11 +11,16 @@ Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. 
 - [WordPress.org](https://wordpress.org/themes/gitsta)
 
 ### Shortcodes
-__To use shortcodes, you must first enable them in theme options!__
+__To use shortcodes, you must first enable them in the theme options!__
 See [Gitsta Shortcodes](http://nehalist.io/gitsta-shortcodes/)
 
-##### Additional
-- Enable markdown support for comments (markdown preview & help) via Admin > Appearance > Gitsta (there aren't that many options :))
+### Menu
+The theme menu supports:
+* Icons (Octicons, Glyphicons, Font Awesome)
+* Submenus
+* All features of the [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker): Dividers, Dropdown Headers and disabled links
+
+To use the icons just set the "Title Attribute" of the menu item to the desired item (e.g. `fa-code`, `octicon-flame`, etc.).
 
 ### Requirements & Recommendation
 * This theme requires at least PHP 5.3, due the usage of closures within the `functions.php`
@@ -30,3 +35,4 @@ Rate it on [WordPress.org](https://wordpress.org/themes/gitsta) or star it on [G
 * [Marked](https://github.com/chjj/marked)
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 * [TGM Plugin Activation](http://tgmpluginactivation.com/)
+* [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker)
