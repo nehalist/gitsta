@@ -296,6 +296,7 @@ h2.widgettitle {
     font-size: 13px;
 }
 
+
 /*
 |----------------------------------------------------------
 | Navbar
@@ -305,7 +306,7 @@ h2.widgettitle {
 |
 */
 .navbar .submenu {
-    list-style-type: none !important;
+    list-style-type: none;
     margin: 0;
     padding: 0;
 }
@@ -324,4 +325,28 @@ h2.widgettitle {
     color: #262626;
     text-decoration: none;
     background-color: #f5f5f5;
+}
+
+
+/*
+|----------------------------------------------------------
+| Random QA styles
+|----------------------------------------------------------
+*/
+.rqa .rqa-question {
+    font-style: italic;
+    display: block;
+    margin: 0;
+}
+
+.rqa .rqa-question:first-letter {
+    font-weight: bold;
+}
+
+.rqa .rqa-answer {
+    display: block;
+}
+
+.rqa .rqa-answer:first-letter {
+    font-weight: bold;
 }
