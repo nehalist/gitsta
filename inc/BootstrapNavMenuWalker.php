@@ -93,7 +93,7 @@ if( ! function_exists('gitsta_bootstrap_setup')):
                     if ($args->has_children)
                         $class_names .= ' dropdown';
 
-                    if (in_array('current-menu-item', $classes) || $item->current_item_ancestor)
+                    if (in_array('current-menu-item', $classes) || ($item->current_item_ancestor && $depth < 1))
                         $class_names .= ' active';
 
                     $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';

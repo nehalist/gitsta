@@ -327,6 +327,15 @@ h2.widgettitle {
     background-color: #f5f5f5;
 }
 
+.navbar .submenu > .active > a,
+.navbar .submenu > .active > a:hover,
+.navbar .submenu > .active > a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #428bca;
+    outline: 0;
+}
+
 
 /*
 |----------------------------------------------------------
