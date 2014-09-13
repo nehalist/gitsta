@@ -68,10 +68,8 @@ if(comments_open()):
                 <ul class="nav nav-tabs" style="position: relative; top: 1px;">
                     <li class="active"><a href="#write" data-toggle="tab"><i class="fa fa-pencil"></i> Reply</a></li>
                     <?php
-                    $gitsta_theme_options = get_option('gitsta_theme_options');
-                    
                     // These tabs are hidden, if markdown support option is disabled
-                    if(isset($gitsta_theme_options['comment_markdown_support']) && $gitsta_theme_options['comment_markdown_support'] == 1):
+                    if(get_gitsta_theme_option('comment_markdown_support') == 1):
                     ?>
                     <li><a href="#preview" data-toggle="tab" class="preview-reply"><i class="fa fa-eye"></i> Preview</a></li>
                     <li><a href="#help" data-toggle="tab" class="preview-reply"><i class="fa fa-question"></i> Help</a></li>
@@ -127,7 +125,7 @@ if(comments_open()):
                     
                     <?php
                     // These tabs are hidden, if markdown support option is disabled
-                    if(isset($gitsta_theme_options['comment_markdown_support']) && $gitsta_theme_options['comment_markdown_support'] == 1):
+                    if(get_gitsta_theme_option('comment_markdown_support') == 1):
                     ?>
                     
                     <div id="preview" class="tab-pane">

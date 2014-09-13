@@ -25,6 +25,8 @@ add_action('tgmpa_register', function() {
     tgmpa($plugins);
 });
 
+$goofy = array(1);
+
 
 /*
 |----------------------------------------------------------
@@ -158,6 +160,32 @@ add_action('after_setup_theme', function() {
     | Theme options
     |----------------------------------------------------------
     */
+    // To reduce redundancy
+    function get_gitsta_theme_option($option) {
+        // Default theme options (somehow a senseless comment)
+        $default_theme_options = array(
+            'favicon_url'               => '',
+            
+            'comment_markdown_support'  => 1,
+            'gitsta_native_shortcodes'  => 1,
+            'frontpage_blog_descr'      => 0,
+
+            'error_404_title'           => 'Error 404',
+            'error_404_content'         => '<img src="' . get_template_directory_uri() . '/vendor/deadlink.png" class="img-responsive" style="margin: 0 auto; padding-top: 30px; padding-bottom: 30px;">
+                <p class="text-muted">
+                    Whoops, you found a dead link.
+                </p>',
+        );
+        
+        $gitsta_theme_options = get_option('gitsta_theme_options', $default_theme_options);
+        
+        if(isset($gitsta_theme_options[$option])) {
+            return $gitsta_theme_options[$option];
+        }
+        
+        return false;
+    }
+    
     add_action('admin_init', function() {
         register_setting('gitsta_options', 'gitsta_theme_options', function($input) {
             return $input;
@@ -175,8 +203,7 @@ add_action('after_setup_theme', function() {
     | Shortcodes
     |----------------------------------------------------------
     */
-    $gitsta_theme_options = get_option('gitsta_theme_options');
-    if(isset($gitsta_theme_options['gitsta_native_shortcodes']) && $gitsta_theme_options['gitsta_native_shortcodes'] == 1) {
+    if(get_gitsta_theme_option('gitsta_native_shortcodes') == 1) {
         include 'inc/Shortcodes.php';
     }
     

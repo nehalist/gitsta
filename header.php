@@ -10,6 +10,14 @@
         <link href="<?php echo bloginfo('stylesheet_url'); ?>" rel="stylesheet">
         
         <?php
+        if(get_gitsta_theme_option('favicon_url') != ''):
+        ?>
+        <link rel="shortcut icon" href="<?php echo get_gitsta_theme_option('favicon_url'); ?>" type="image/x-icon">
+        <?php
+        endif;
+        ?>
+        
+        <?php
         if(is_singular() && get_option('thread_comments')) {
             wp_enqueue_script('comment-reply');
         }
@@ -95,9 +103,7 @@
         <!-- Anchor for "Back to top"-Link -->
         <a name="top"></a>
         <?php
-        $gitsta_theme_options = get_option('gitsta_theme_options');
-        //if(isset($gitsta_theme_options['comment_markdown_support']) && $gitsta_theme_options['comment_markdown_support'] == 1):
-        if(is_front_page() && (isset($gitsta_theme_options['frontpage_blog_descr']) && $gitsta_theme_options['frontpage_blog_descr'] == 1)):
+        if(is_front_page() && (get_gitsta_theme_option('frontpage_blog_descr') == 1)):
         ?>
         <div class="subhead">
             <div class="container">
