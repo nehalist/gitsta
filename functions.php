@@ -57,7 +57,6 @@ add_action('after_setup_theme', function() {
         wp_enqueue_script('bootstrap', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap.js');
         wp_enqueue_script('marked', get_template_directory_uri() . '/vendor/marked.js');
         
-        wp_enqueue_script('require-js', get_template_directory_uri() . '/vendor/require.js');
         wp_enqueue_script('gitsta-main-js', get_template_directory_uri() . '/js/main.js');
         
         wp_localize_script('gitsta-main-js', 'theme', array('template_directory_uri' => get_template_directory_uri()));
