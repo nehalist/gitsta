@@ -74,10 +74,12 @@ add_action('after_setup_theme', function() {
     |
     */
     if(function_exists('register_sidebar')) {
-        register_sidebar(array(
-            'before_widget' => '<div id="%1$s" class="widget hidden-xs">',
-            'after_widget'  => '</div>'
-        ));
+        add_action('widgets_init', function() {
+            register_sidebar(array(
+                'before_widget' => '<div id="%1$s" class="widget hidden-xs">',
+                'after_widget'  => '</div>'
+            ));
+        });
     }
 
 
