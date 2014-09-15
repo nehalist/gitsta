@@ -6,13 +6,9 @@
         <title><?php wp_title(); ?></title>
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
         
-        <!-- Theme style -->
-        <link href="<?php echo bloginfo('stylesheet_url'); ?>" rel="stylesheet">
-        
         <?php
         if(get_gitsta_theme_option('favicon_url') != ''):
         ?>
-        <link rel="shortcut icon" href="<?php echo get_gitsta_theme_option('favicon_url'); ?>" type="image/x-icon">
         <?php
         endif;
         ?>

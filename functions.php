@@ -51,6 +51,7 @@ add_action('after_setup_theme', function() {
     
     // Scripts and styles used by the theme
     add_action('wp_enqueue_scripts', function() {
+        wp_enqueue_style('gitsta-style', get_stylesheet_uri());
         wp_enqueue_style('bootstrap', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.css');
         wp_enqueue_style('font-awesome', get_template_directory_uri() . '/vendor/font-awesome/css/font-awesome.css');
         wp_enqueue_style('octicons', get_template_directory_uri() . '/vendor/octicons/css/octicons.css');
