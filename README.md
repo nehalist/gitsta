@@ -10,15 +10,11 @@ Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. 
 - [GitHub Releases](https://github.com/HirczyK/gitsta/releases)
 - [WordPress.org](https://wordpress.org/themes/gitsta)
 
-### Shortcodes
-__To use shortcodes, you must first enable them in the theme options!__
-See [Gitsta Shortcodes](http://nehalist.io/gitsta-shortcodes/)
-
 ### Menu
 The theme menu supports:
 * Icons (Octicons, Glyphicons, Font Awesome)
 * Submenus
-* All features of the [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker): Dividers, Dropdown Headers and disabled links
+* All features of [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker): Dividers, Dropdown Headers and disabled links
 
 To use the icons just set the "Title Attribute" of the menu item to the desired item (e.g. `fa-code`, `octicon-flame`, etc.).
 

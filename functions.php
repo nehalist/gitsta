@@ -203,16 +203,6 @@ add_action('after_setup_theme', function() {
     
     /*
     |----------------------------------------------------------
-    | Shortcodes
-    |----------------------------------------------------------
-    */
-    if(get_gitsta_theme_option('gitsta_native_shortcodes') == 1) {
-        include 'inc/Shortcodes.php';
-    }
-    
-    
-    /*
-    |----------------------------------------------------------
     | Custom wp_link_pages function
     |----------------------------------------------------------
     */
