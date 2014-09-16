@@ -1,6 +1,6 @@
 gitsta
 ======
-Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. Mainly designed for programmers, but suitable for any bloggers. With shortcodes for bootstrap and lots of icons (font awesome, octicons and glyphicons)!
+Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. Mainly designed for programmers, but suitable for any bloggers.
 
 ![screenshot](screenshot.png)
 
@@ -9,6 +9,21 @@ Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. 
 ### Download
 - [GitHub Releases](https://github.com/HirczyK/gitsta/releases)
 - [WordPress.org](https://wordpress.org/themes/gitsta)
+
+### Features
+* Responsive
+* Support for font awesome, octicons, glyphicons
+* Dynamic sidebar (statically positioned if the window height allows it, otherwise non-static)
+* Theme options
+  * Favicon
+  * Comment markdown support
+  * Enable/disable blog description on front page
+  * Customizable error page
+* Neat comments style
+* Neat source code displaying within posts and pages
+* Full-width template
+* Advanced menues (with icons, dividers, ...)
+* Well written and documented source code
 
 ### Menu
 The theme menu supports:
