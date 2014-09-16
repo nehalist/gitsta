@@ -170,7 +170,6 @@ add_action('after_setup_theme', function() {
             'favicon_url'               => '',
             
             'comment_markdown_support'  => 1,
-            'gitsta_native_shortcodes'  => 1,
             'frontpage_blog_descr'      => 0,
 
             'error_404_title'           => 'Error 404',
