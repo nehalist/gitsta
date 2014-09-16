@@ -28,7 +28,7 @@
                 <div class="navbar-header">
                     <!-- Nav button for small resolutions -->
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only"><?php _e('Toggle navigation', 'gitsta'); ?></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -58,12 +58,12 @@
                         // Dropdown for anonymous users
                         if( ! is_user_logged_in()):
                         ?>
-                        <a href="#" class="btn navbar-btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Anonymous <b class="caret"></b></a>
+                        <a href="#" class="btn navbar-btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php _e('Anonymous', 'gitsta'); ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo wp_login_url(); ?>" href="#login">Login</a></li>
+                            <li><a href="<?php echo wp_login_url(); ?>" href="#login"><?php _e('Login', 'gitsta'); ?></a></li>
                             <li class="divider"></li>
-                            <li><a href="<?php echo wp_login_url(get_permalink()); ?>">Register</a></li>
-                            <li><a href="<?php echo wp_lostpassword_url(); ?>">Lost password</a></li>
+                            <li><a href="<?php echo wp_login_url(get_permalink()); ?>"><?php _e('Register', 'gitsta'); ?></a></li>
+                            <li><a href="<?php echo wp_lostpassword_url(); ?>"><?php _e('Lost password', 'gitsta'); ?></a></li>
                         </ul>
                         
                         <?php
@@ -73,21 +73,21 @@
                         ?>
                         <a href="#" class="btn navbar-btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $current_user->user_login; ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo admin_url(); ?>">Dashboard</a></li>
+                            <li><a href="<?php echo admin_url(); ?>"><?php _e('Dashboard', 'gitsta'); ?></a></li>
 
                             <?php
                             // A link for gust, if installed
                             include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
                             if(current_user_can('publish_posts') && is_plugin_active('gust/gust.php')):
                             ?>
-                            <li><a href="<?php echo esc_url(home_url('/gust')); ?>">Gust</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/gust')); ?>"><?php _e('Gust', 'gitsta'); ?></a></li>
                             <?php
                             endif;
                             ?>
 
-                            <li><a href="<?php echo home_url(); ?>/wp-admin/profile.php">Edit profile</a></li>
+                            <li><a href="<?php echo home_url(); ?>/wp-admin/profile.php"><?php _e('Edit profile', 'gitsta'); ?></a></li>
                             <li class="divider"></li>
-                            <li><a href="<?php echo wp_logout_url('index.php'); ?>">Sign Out</a></li>
+                            <li><a href="<?php echo wp_logout_url('index.php'); ?>"><?php _e('Sign Out', 'gitsta'); ?></a></li>
                         </ul>
                         <?php
                         endif; // End of dropdown for logged users

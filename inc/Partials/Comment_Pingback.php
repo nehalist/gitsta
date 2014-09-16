@@ -20,7 +20,7 @@
             <span class="text-muted"><small><?php echo Gitsta_ThemeComments::timeElapsedString($comment->comment_date); ?></small></span>
 
             <span class="pull-right">
-                <?php echo edit_comment_link('<i class="fa fa-edit"></i> Edit'); ?>
+                <?php echo edit_comment_link('<i class="fa fa-edit"></i> ' . __('Edit', 'gitsta')); ?>
             </span>
         </div>
     </div>

@@ -16,7 +16,7 @@ if(post_password_required()) {
                     '%1$s comments',
                     get_comments_number(),
                     null,
-                    '_THEME'
+                    'gitsta'
                 ), 
                 number_format_i18n(
                     get_comments_number()
@@ -36,8 +36,8 @@ if(post_password_required()) {
 
     <?php if((get_comment_pages_count() > 1) && (get_option('page_comments'))): ?>
     <ul class="pager">
-        <li class="previous"><?php previous_comments_link('Older comments'); ?></li>
-        <li class="next"><?php next_comments_link('Newer comments'); ?></li>
+        <li class="previous"><?php previous_comments_link(__('Older comments', 'gitsta')); ?></li>
+        <li class="next"><?php next_comments_link(__('Newer comments', 'gitsta')); ?></li>
     </ul>
     <?php endif; // Comment navigation ?>
 
@@ -66,13 +66,13 @@ if(comments_open()):
         <div class="media-body-wrap panel panel-default comment">
             <div class="panel-heading" style="padding-bottom: 0;">
                 <ul class="nav nav-tabs" style="position: relative; top: 1px;">
-                    <li class="active"><a href="#write" data-toggle="tab"><i class="fa fa-pencil"></i> Reply</a></li>
+                    <li class="active"><a href="#write" data-toggle="tab"><i class="fa fa-pencil"></i> <?php _e('Reply', 'gitsta'); ?></a></li>
                     <?php
                     // These tabs are hidden, if markdown support option is disabled
                     if(get_gitsta_theme_option('comment_markdown_support') == 1):
                     ?>
-                    <li><a href="#preview" data-toggle="tab" class="preview-reply"><i class="fa fa-eye"></i> Preview</a></li>
-                    <li><a href="#help" data-toggle="tab" class="preview-reply"><i class="fa fa-question"></i> Help</a></li>
+                    <li><a href="#preview" data-toggle="tab" class="preview-reply"><i class="fa fa-eye"></i> <?php _e('Preview', 'gitsta'); ?></a></li>
+                    <li><a href="#help" data-toggle="tab" class="preview-reply"><i class="fa fa-question"></i> <?php _e('Help', 'gitsta'); ?></a></li>
                     <?php
                     endif;
                     ?>
@@ -88,15 +88,15 @@ if(comments_open()):
                         
                         $gitsta_form_author = '<div class="row">
                                 <div class="col-md-4">
-                                    <input class="form-control" placeholder="Name" id="author" name="author" type="text" value="' . esc_attr($gitsta_form_commenter['comment_author']) . '" size="30"' . $gitsta_form_aria_req . ' />
+                                    <input class="form-control" placeholder="' . __('Name', 'gitsta') . '" id="author" name="author" type="text" value="' . esc_attr($gitsta_form_commenter['comment_author']) . '" size="30"' . $gitsta_form_aria_req . ' />
                             </div>';
 
                         $gitsta_form_mail = '<div class="col-md-4">
-                                <input class="form-control" placeholder="E-Mail" id="email" name="email" type="text" value="' . esc_attr($gitsta_form_commenter['comment_author_email']) . '" size="30"' . $gitsta_form_aria_req . ' />
+                                <input class="form-control" placeholder="' . __('E-Mail', 'gitsta') . '" id="email" name="email" type="text" value="' . esc_attr($gitsta_form_commenter['comment_author_email']) . '" size="30"' . $gitsta_form_aria_req . ' />
                             </div>';
 
                         $gitsta_form_url = '<div class="col-md-4">
-                                <input class="form-control" placeholder="URL" id="url" name="url" type="text" value="' . esc_attr($gitsta_form_commenter['comment_author_url']) . '" size="30" />
+                                <input class="form-control" placeholder="' . __('URL', 'gitsta') . '" id="url" name="url" type="text" value="' . esc_attr($gitsta_form_commenter['comment_author_url']) . '" size="30" />
                             </div>
                         </div><!-- /row -->';
 
@@ -105,7 +105,7 @@ if(comments_open()):
                             'title_reply'           => '</h3>',
                             'title_reply_to'        => '</h3><div class="alert alert-info">Replying to %s. '.cancel_comment_reply_link('Click here to cancel reply.').'</div>',
                             'cancel_reply_link'     => '<em></em>',
-                            'label_submit'          => 'Post comment',
+                            'label_submit'          => __('Post comment', 'gitsta'),
                             'fields'                => array(
                                 'author' =>
                                 $gitsta_form_author,
@@ -116,7 +116,7 @@ if(comments_open()):
                                 'url' =>
                                 $gitsta_form_url
                             ),
-                            'comment_field'         => '<br><p><textarea placeholder="Markdown enabled" id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
+                            'comment_field'         => '<br><p><textarea placeholder="' . __('Markdown enabled', 'gitsta') . '" id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
                             'comment_notes_after'   => '',
                             'comment_notes_before'  => ''
                         ));
@@ -138,8 +138,8 @@ if(comments_open()):
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th style="width: 50%;">Markdown</th>
-                                    <th style="width: 50%;">Result</th>
+                                    <th style="width: 50%;"><?php _e('Markdown', 'gitsta'); ?></th>
+                                    <th style="width: 50%;"><?php _e('Result', 'gitsta'); ?></th>
                                 </tr>
                             </thead>
                             <tbody>

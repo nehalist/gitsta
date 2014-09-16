@@ -42,7 +42,7 @@ class Gitsta_ThemeComments {
         }
 
         if (!$full) $string = array_slice($string, 0, 1);
-        return $string ? implode(', ', $string) . ' ago' : 'just now';
+        return $string ? implode(', ', $string) . __(' ago', 'gitsta') : __e('just now', 'gitsta');
     }
     
 }

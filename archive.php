@@ -9,25 +9,20 @@
             elseif (is_tag()) {
                 single_tag_title();
             }
-            
             elseif (is_author()) {
-                printf('Author: %s', get_the_author());
+                printf(__('Author: %s', 'gitsta'), get_the_author());
             }
-            
             elseif (is_day()) {
-                printf('Day: %s', get_the_date());
+                printf(__('Day: %s', 'gitsta'), get_the_date());
             }
-                
             elseif (is_month()) {
-                printf('Month: %s', get_the_date('F Y'));
+                printf(__('Month: %s', 'gitsta'), get_the_date('F Y'));
             }
-            
             elseif (is_year()) {
-                printf('Year: %s', get_the_date(_x('Y')));
+                printf(__('Year: %s', 'gitsta'), get_the_date(_x('Y')));
             }
-
             else {
-                echo 'Archives';
+                echo __('Archives', 'gitsta');
             }
             ?>
             </h3>
@@ -57,8 +52,8 @@
                 
                 <?php wp_link_pages(); ?>
                 <ul class="pager">
-                    <li class="previous"><?php next_posts_link( 'Older posts' ); ?></li>
-                    <li class="next"><?php previous_posts_link( 'Newer posts' ); ?></li>
+                    <li class="previous"><?php next_posts_link( __('Older posts', 'gitsta') ); ?></li>
+                    <li class="next"><?php previous_posts_link( __('Newer posts', 'gitsta') ); ?></li>
                 </ul>
             </div>
             <div class="col-md-2">

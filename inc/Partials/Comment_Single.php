@@ -26,11 +26,11 @@
 
                     <span class="pull-right">
                         <?php echo edit_comment_link('<i class="fa fa-edit"></i> Edit'); ?>
-                        <?php echo get_comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => '<i class="fa fa-reply"></i> Reply'))); ?>
+                        <?php echo get_comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => '<i class="fa fa-reply"></i> ' . __('Reply', 'gitsta')))); ?>
                     </span>
 
                     <?php if ($comment->comment_approved == 0) : ?>
-                        <p class="pull-right text-muted">Your comment is awaiting moderation.&nbsp;</p>
+                        <p class="pull-right text-muted"><?php _e('Your comment is awaiting moderation.', 'gitsta'); ?>&nbsp;</p>
                     <?php endif; ?>
                 </div>
 

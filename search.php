@@ -2,7 +2,7 @@
 
     <div class="subhead">
         <div class="container">
-            <h3>Results for: <em><?php echo get_search_query(); ?></em></h3>
+            <h3><?php _e('Results for:', 'gitsta'); ?> <em><?php echo get_search_query(); ?></em></h3>
         </div>
     </div>
     <div class="container">
@@ -26,8 +26,8 @@
                 
                 <?php wp_link_pages(); ?>
                 <ul class="pager">
-                    <li class="previous"><?php next_posts_link( 'Older posts' ); ?></li>
-                    <li class="next"><?php previous_posts_link( 'Newer posts' ); ?></li>
+                    <li class="previous"><?php next_posts_link( __('Older posts', 'gitsta') ); ?></li>
+                    <li class="next"><?php previous_posts_link( __('Newer posts', 'gitsta') ); ?></li>
                 </ul>
             </div>
             <div class="col-md-2">

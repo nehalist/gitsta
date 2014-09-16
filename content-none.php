@@ -1,4 +1,4 @@
 <div class="text-center">
-    <h3>Nothing to see here. <br>
-    <small>Move along folks!</small></h3>
+    <h3><?php _e('Nothing to see here.', 'gitsta'); ?><br>
+    <small><?php _e('Move along folks!', 'gitsta'); ?></small></h3>
 </div>

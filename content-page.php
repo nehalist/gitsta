@@ -4,7 +4,7 @@
             <i class="fa fa-calendar"></i> <?php echo the_date(); ?>
 
             <span class="pull-right">
-                 <?php edit_post_link('<i class="fa fa-edit"></i> Edit'); ?> 
+                 <?php edit_post_link('<i class="fa fa-edit"></i> ' . __('Edit', 'gitsta')); ?> 
             </span>
         </p>
     </div>
