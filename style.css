@@ -198,6 +198,7 @@ li .comment:after   {
 */
 .sidebar {
     width: 213px;
+    max-width: 213px;
 }
 h2.widgettitle {
     font-size: 1.1em;
@@ -211,8 +212,43 @@ h2.widgettitle {
 .widget {
     margin-bottom: 16px;
 }
-.widget > ul {
+.widget ul {
     list-style-type: none;
+}
+.widget ul li {
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+}
+.widget ul a {
+    color: #999;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 0;
+    border-left: 1px solid #563d7c;
+    padding: 4px 20px;
+}
+.widget ul a:hover,
+.widget ul a:focus {
+    padding-left: 19px;
+    color: #563d7c;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 2px solid #563d7c;
+    border-radius: 0;
+}
+.widget ul li ul a {
+    border-left: 0;
+    padding-left: 7px;
+}
+.widget ul li ul a:hover,
+.widget ul li ul a:focus {
+    border-left: 0;
+    padding-left: 7px;
+}
+.widget > div > ul {
+    padding: 0 !important;
+}
+.widget > ul {
     margin: 0;
     margin-bottom: 15px;
     padding: 0;
@@ -220,22 +256,6 @@ h2.widgettitle {
 }
 .widget > ul > li > a {
     display: inline-block;
-    padding: 4px 20px;
-    font-size: 13px;
-    font-weight: 500;
-    color: #999;
-    border-radius: 0;
-    border-left: 1px solid #563d7c;
-    margin-bottom: 2px;
-}
-.widget > ul > li > a:hover,
-.widget > ul > li > a:focus {
-    padding-left: 19px;
-    color: #563d7c;
-    text-decoration: none;
-    background-color: transparent;
-    border-left: 2px solid #563d7c;
-    border-radius: 0;
 }
 .widget > .active > a,
 .widget > .active:hover > a,
