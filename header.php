@@ -60,7 +60,7 @@
                         ?>
                         <a href="#" class="btn navbar-btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php _e('Anonymous', 'gitsta'); ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo wp_login_url(); ?>" href="#login"><?php _e('Login', 'gitsta'); ?></a></li>
+                            <li><a href="<?php echo wp_login_url(); ?>"><?php _e('Login', 'gitsta'); ?></a></li>
                             <li class="divider"></li>
                             <li><a href="<?php echo wp_login_url(get_permalink()); ?>"><?php _e('Register', 'gitsta'); ?></a></li>
                             <li><a href="<?php echo wp_lostpassword_url(); ?>"><?php _e('Lost password', 'gitsta'); ?></a></li>
