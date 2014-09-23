@@ -17,7 +17,7 @@
             endif;
             ?>
 
-            <span class="text-muted"><small><?php echo Gitsta_ThemeComments::timeElapsedString($comment->comment_date); ?></small></span>
+            <span class="text-muted"><small><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ' .  __('ago', 'gitsta') ?></small></span>
 
             <span class="pull-right">
                 <?php echo edit_comment_link('<i class="fa fa-edit"></i> ' . __('Edit', 'gitsta')); ?>
