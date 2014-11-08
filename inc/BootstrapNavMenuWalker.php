@@ -47,7 +47,7 @@ if( ! function_exists('gitsta_bootstrap_setup')):
                 if($depth < 1) {
                     $output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
                 } else {
-                    $output .= "\n$indent\n<ul class=\"submenu\">\n";
+                    $output .= "\n$indent\n<ul class=\"dropdown-menu\">\n";
                 }
             }
 
@@ -87,11 +87,11 @@ if( ! function_exists('gitsta_bootstrap_setup')):
 
                     $classes = empty($item->classes) ? array() : (array) $item->classes;
                     $classes[] = 'menu-item-' . $item->ID;
+                    
+                    if($args->has_children && $depth > 0)
+                        $classes[] = 'dropdown-submenu';
 
                     $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
-
-                    if ($args->has_children)
-                        $class_names .= ' dropdown';
 
                     if (in_array('current-menu-item', $classes) || ($item->current_item_ancestor && $depth < 1))
                         $class_names .= ' active';
@@ -100,7 +100,7 @@ if( ! function_exists('gitsta_bootstrap_setup')):
 
                     $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
                     $id = $id ? ' id="' . esc_attr($id) . '"' : '';
-
+                    
                     $output .= $indent . '<li' . $id . $value . $class_names . '>';
 
                     $atts = array();
@@ -117,6 +117,10 @@ if( ! function_exists('gitsta_bootstrap_setup')):
                     } else {
                         $atts['href'] = !empty($item->url) ? $item->url : '';
                     }
+                    
+                    if($args->has_children && $depth > 0) {
+                        $atts['data-toggle'] = 'dropdown';
+                    }
 
                     $atts = apply_filters('nav_menu_link_attributes', $atts, $item, $args);
 
@@ -131,11 +135,6 @@ if( ! function_exists('gitsta_bootstrap_setup')):
 
                     $item_output = $args->before;
                     
-                    // Intend submenues
-                    // Two spaces per depth
-                    // Not the most beautiful solution, but still mobile friendly
-                    $submenu_intend = ($depth >= 2) ? (str_repeat('&nbsp;', $depth * 3)) : '';
-
                     /*
                      * Icons
                      */
@@ -154,21 +153,21 @@ if( ! function_exists('gitsta_bootstrap_setup')):
                             if(in_array($family, $supported_families)) {
                                 if($family == 'fa') {
                                     // Font Awesome uses <i> instead of <span>
-                                    $item_output .= '<a' . $attributes . '>' . $submenu_intend . '<i class="' . $family . ' ' . esc_attr($item->attr_title) . '"></i>&nbsp;';
+                                    $item_output .= '<a' . $attributes . '><i class="' . $family . ' ' . esc_attr($item->attr_title) . '"></i>&nbsp;';
                                 } else {
                                     // Other families use <span>
-                                    $item_output .= '<a' . $attributes . '>' . $submenu_intend . '<span class="' . $family . ' ' . esc_attr($item->attr_title) . '"></span>&nbsp;';
+                                    $item_output .= '<a' . $attributes . '><span class="' . $family . ' ' . esc_attr($item->attr_title) . '"></span>&nbsp;';
                                 }
                             } else {
                                 // Family not found
-                                $item_output .= '<a' . $attributes . '>' . $submenu_intend . '<i class="fa fa-question-circle"></i>&nbsp;';
+                                $item_output .= '<a' . $attributes . '><i class="fa fa-question-circle"></i>&nbsp;';
                             }
                         } else {
                             // Family not found
-                            $item_output .= '<a' . $attributes . '>' . $submenu_intend . '<i class="fa fa-question-circle"></i>&nbsp;';
+                            $item_output .= '<a' . $attributes . ' ><i class="fa fa-question-circle"></i>&nbsp;';
                         }
                     } else
-                        $item_output .= '<a' . $attributes . '>' . $submenu_intend . '';
+                        $item_output .= '<a' . $attributes . '>';
 
                     $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
                     $item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
