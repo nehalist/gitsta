@@ -157,6 +157,12 @@ add_action('after_setup_theme', function() {
         return $content;
     });
     
+    // Read more Hack
+    add_filter('the_content_more_link', function($link) {
+        $link = preg_replace( '|#more-[0-9]+|', '', $link );
+	return $link;
+    });
+    
     
     /*
     |----------------------------------------------------------
