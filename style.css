@@ -110,10 +110,19 @@ pre code {
 |----------------------------------------------------------
 */
 .wp-caption         { }
-.wp-caption-text    { color: #999; }
+.wp-caption-text    { color: #999; font-size: 12px; }
 .sticky             { }
 .gallery-caption    { }
 .bypostauthor       { }
+.wp-caption.alignright {
+    float: right;
+}
+.wp-caption.alignleft {
+    float: left;
+}
+.wp-caption .wp-caption-text {
+    text-align: center;
+}
 
 
 /*
