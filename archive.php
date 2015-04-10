@@ -16,10 +16,10 @@
                 printf(__('Day: %s', 'gitsta'), get_the_date());
             }
             elseif (is_month()) {
-                printf(__('Month: %s', 'gitsta'), get_the_date('F Y'));
+                printf(__('Month: %s', 'gitsta'), get_the_date(_x('F Y', 'monthly archives date format', 'gitsta')));
             }
             elseif (is_year()) {
-                printf(__('Year: %s', 'gitsta'), get_the_date(_x('Y')));
+                printf(__('Year: %s', 'gitsta'), get_the_date(_x('Y', 'yearly archives date format', 'gitsta')));
             }
             else {
                 echo __('Archives', 'gitsta');
