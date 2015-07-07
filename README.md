@@ -4,10 +4,8 @@ Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. 
 
 ![screenshot](screenshot.png)
 
-[Live Demo](http://nehalist.io)
-
 ### Download
-- [GitHub Releases](https://github.com/HirczyK/gitsta/releases)
+- [GitHub Releases](https://github.com/nehalist/gitsta/releases)
 - [WordPress.org](https://wordpress.org/themes/gitsta)
 
 ### Features
@@ -38,7 +36,7 @@ To use the icons just set the "Title Attribute" of the menu item to the desired 
 * Since this theme was created with markdown in mind, you should use some kind of markdown plugin (I'm pretty satisfied with [WP-Markdown](https://wordpress.org/plugins/wp-markdown/)). If you don't like to use markdown, you can disable the markdown support within the theme settings.
 
 ### Like the theme?
-Rate it on [WordPress.org](https://wordpress.org/themes/gitsta) or star it on [GitHub](https://github.com/HirczyK/gitsta)! Thanks!
+Rate it on [WordPress.org](https://wordpress.org/themes/gitsta) or star it on [GitHub](https://github.com/nehalist/gitsta)! Thanks!
 
 ### Credits
 * [Bootstrap](http://www.getbootstrap.com)
