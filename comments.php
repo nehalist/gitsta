@@ -17,7 +17,7 @@ if(post_password_required()) {
                     get_comments_number(),
                     null,
                     'gitsta'
-                ), 
+                ),
                 number_format_i18n(
                     get_comments_number()
                 )
@@ -54,11 +54,11 @@ if(comments_open()):
     <div class="pull-left" href="#">
         <?php
         // Show avatar for logged users
-        
+
         global $current_user;
-        get_currentuserinfo();
-        
-        echo get_avatar($current_user->user_email, 50); 
+        wp_get_current_user();
+
+        echo get_avatar($current_user->user_email, 50);
         ?>
     </div>
 
@@ -85,7 +85,7 @@ if(comments_open()):
                         $gitsta_form_commenter  = wp_get_current_commenter();
                         $gitsta_form_req        = get_option('require_name_email');
                         $gitsta_form_aria_req   = ($req ? " aria-required='true'" : '');
-                        
+
                         $gitsta_form_author = '<div class="row">
                                 <div class="col-md-4">
                                     <input class="form-control" placeholder="' . __('Name', 'gitsta') . '" id="author" name="author" type="text" value="' . esc_attr($gitsta_form_commenter['comment_author']) . '" size="30"' . $gitsta_form_aria_req . ' />
@@ -109,10 +109,10 @@ if(comments_open()):
                             'fields'                => array(
                                 'author' =>
                                 $gitsta_form_author,
-                                
+
                                 'email' =>
                                 $gitsta_form_mail,
-                                
+
                                 'url' =>
                                 $gitsta_form_url
                             ),
@@ -122,17 +122,17 @@ if(comments_open()):
                         ));
                         ?>
                     </div>
-                    
+
                     <?php
                     // These tabs are hidden, if markdown support option is disabled
                     if(get_gitsta_theme_option('comment_markdown_support') == 1):
                     ?>
-                    
+
                     <div id="preview" class="tab-pane">
                         <!-- Markdown preview tab -->
                         <div id="markdown-preview"></div>
                     </div>
-                    
+
                     <div id="help" class="tab-pane">
                         <!-- Markdown help tab -->
                         <table class="table table-striped">
@@ -183,7 +183,7 @@ more code</pre>
                             </tbody>
                         </table>
                     </div>
-                    
+
                     <?php endif; // if markdown support for comments is enabled ?>
                 </div>
             </div>
