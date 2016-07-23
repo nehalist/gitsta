@@ -3,22 +3,33 @@
     <head>
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php wp_title(); ?></title>
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-        
+
         <?php
         if(get_gitsta_theme_option('favicon_url') != ''):
         ?>
         <?php
         endif;
         ?>
-        
+
         <?php
         if(is_singular() && get_option('thread_comments')) {
             wp_enqueue_script('comment-reply');
         }
-        
+
         wp_head();
+        ?>
+
+        <?php
+        if(is_admin_bar_showing()):
+        ?>
+        <style>
+        .navbar {
+          padding-top: 32px;
+        }
+        </style>
+        <?php
+        endif;
         ?>
     </head>
 
@@ -33,7 +44,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    
+
                     <a class="navbar-brand" href="<?php echo get_home_url(); ?>"><?php bloginfo('name'); ?></a>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
@@ -49,7 +60,7 @@
                     );
 
                     wp_nav_menu($gitsta_nav_args);
-                    
+
                     // see searchform.php
                     get_search_form();
                     ?>
@@ -65,7 +76,7 @@
                             <li><a href="<?php echo wp_login_url(get_permalink()); ?>"><?php _e('Register', 'gitsta'); ?></a></li>
                             <li><a href="<?php echo wp_lostpassword_url(); ?>"><?php _e('Lost password', 'gitsta'); ?></a></li>
                         </ul>
-                        
+
                         <?php
                         // Dropdown for logged users
                         else:
@@ -106,6 +117,6 @@
                 <h3><?php echo bloginfo('description'); ?></h3>
             </div>
         </div>
-        <?php 
+        <?php
         endif;
         ?>

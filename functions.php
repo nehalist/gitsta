@@ -43,6 +43,7 @@ add_action('after_setup_theme', function() {
     // Theme support
     add_theme_support('automatic-feed-links');
     add_theme_support('post-thumbnails');
+    add_theme_support('title-tag');
 
     // Title hook
     add_action('wp_title', function($title) {
@@ -106,9 +107,6 @@ add_action('after_setup_theme', function() {
         $link = str_replace('class="post-edit-link"', "class='post-edit-link btn btn-info btn-xs'", $link);
         return $link;
     });
-
-    // Hide admin bar
-    add_filter('show_admin_bar', '__return_false');
 
     // Add some css classes to images
     add_filter('the_content', function($content) {
