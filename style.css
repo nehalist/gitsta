@@ -30,6 +30,10 @@ pre > code      {
     line-height: 1.8em;
 }
 div.item        { margin-bottom: 50px; }
+/* Fix for https://github.com/nehalist/gitsta/issues/11 */
+.post-content .google-maps-builder-wrap div {
+    max-width: none !important;
+}
 .post-content div {
     max-width: 100% !important;
 }
