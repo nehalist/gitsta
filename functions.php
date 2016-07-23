@@ -51,34 +51,7 @@ add_action('after_setup_theme', function() {
 
     // Scripts and styles used by the theme
     add_action('wp_enqueue_scripts', function() {
-        // jQuery is loaded from Google's CDN
-        // see http://wordpress.stackexchange.com/questions/12448 for details
-        wp_deregister_script('jquery');
-        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', array(), '2.1.3');
-
-        function __jquery_fallback($src, $handle = null) {
-            static $next = false;
-
-            if($next) {
-                $local = includes_url('/js/jquery/jquery.js');
-                echo <<<JS
-<script type="text/javascript">/*//<![CDATA[*/window.jQuery || document.write('<script type="text/javascript" src="$local"><\/script>');/*//]]>*/</script>
-
-JS;
-                $next = false;
-            }
-
-            if($handle === 'jquery') {
-                $next = true;
-            }
-
-            return $src;
-        }
-
         // Scripts and styles
-        add_filter('script_loader_src', '__jquery_fallback', 10, 2);
-        add_action('wp_head', '__jquery_fallback', 2);
-
         wp_enqueue_style('gitsta-style', get_stylesheet_uri());
         wp_enqueue_style('bootstrap', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.css');
         wp_enqueue_style('font-awesome', get_template_directory_uri() . '/vendor/font-awesome/css/font-awesome.css');
