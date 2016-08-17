@@ -21,7 +21,7 @@ add_action('tgmpa_register', function() {
             'required'  => false
         )
     );
-    
+
     tgmpa($plugins);
 });
 
@@ -39,33 +39,34 @@ add_action('after_setup_theme', function() {
     if( ! isset($content_width)) {
         $content_width = 945;
     }
-    
+
     // Theme support
     add_theme_support('automatic-feed-links');
     add_theme_support('post-thumbnails');
+    add_theme_support('title-tag');
 
     // Title hook
     add_action('wp_title', function($title) {
         return get_bloginfo('name') . $title;
     });
-    
+
     // Scripts and styles used by the theme
     add_action('wp_enqueue_scripts', function() {
+        // Scripts and styles
         wp_enqueue_style('gitsta-style', get_stylesheet_uri());
         wp_enqueue_style('bootstrap', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.css');
         wp_enqueue_style('font-awesome', get_template_directory_uri() . '/vendor/font-awesome/css/font-awesome.css');
         wp_enqueue_style('octicons', get_template_directory_uri() . '/vendor/octicons/css/octicons.css');
 
-        wp_enqueue_script('jquery');
-        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap.js');
+        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap.js', array('jquery'));
         wp_enqueue_script('marked', get_template_directory_uri() . '/vendor/marked.js');
-        
+
         wp_enqueue_script('gitsta-main-js', get_template_directory_uri() . '/js/main.js');
-        
+
         wp_localize_script('gitsta-main-js', 'theme', array('template_directory_uri' => get_template_directory_uri()));
     });
-    
-    
+
+
     /*
     |----------------------------------------------------------
     | Sidebar
@@ -94,21 +95,18 @@ add_action('after_setup_theme', function() {
         $link = str_replace("class='comment-reply-link'", "class='comment-reply-link btn btn-default btn-xs' data-scroll='true'", $link);
         return $link;
     });
-    
+
     // CSS Style for edit comment link
     add_filter('edit_comment_link', function($link) {
         $link = str_replace('class="comment-edit-link"', "class='comment-edit-link btn btn-default btn-xs'", $link);
         return $link;
     });
-    
+
     // CSS Style for edit post link
     add_filter('edit_post_link', function($link) {
         $link = str_replace('class="post-edit-link"', "class='post-edit-link btn btn-info btn-xs'", $link);
         return $link;
     });
-    
-    // Hide admin bar
-    add_filter('show_admin_bar', '__return_false');
 
     // Add some css classes to images
     add_filter('the_content', function($content) {
@@ -117,13 +115,13 @@ add_action('after_setup_theme', function() {
         $content        = preg_replace($pattern, $replacement, $content);
         return $content;
     });
-    
+
     // Add bootstrap css classes to tables
     add_filter('the_content', function($content) {
         $pattern        = "/<table(.*?)>/i";
         $replacement    = '<table $1 class="table table-bordered table-striped">';
         $content        = preg_replace($pattern, $replacement, $content);
-        
+
         return $content;
     });
 
@@ -134,7 +132,7 @@ add_action('after_setup_theme', function() {
                               $avatar);
         return $avatar;
     });
-    
+
     // Add css class to tags
     add_filter('the_tags', function($tag) {
         $tag = str_replace('rel="tag">',
@@ -143,27 +141,27 @@ add_action('after_setup_theme', function() {
 
         return $tag;
     });
-    
+
     // Code tags
     add_filter('the_content', function($content) {
         $pattern        = "/<pre(.*?)>/i";
         $replacement    = '<div class="code-box"><div class="code-title"><i class="fa fa-code"></i> <div class="pull-right"><a href="#" class="btn btn-default btn-xs toggle-code" data-toggle="tooltip" title="' . __('Toggle code', 'gitsta') . '"><i class="fa fa-toggle-up"></i></a></div></div><pre $1>';
         $content        = preg_replace($pattern, $replacement, $content);
-       
+
         $pattern        = "/<\/pre>/";
         $replacement    = '</pre></div>';
         $content        = preg_replace($pattern, $replacement, $content);
-        
+
         return $content;
     });
-    
+
     // Read more Hack
     add_filter('the_content_more_link', function($link) {
         $link = preg_replace( '|#more-[0-9]+|', '', $link );
 	return $link;
     });
-    
-    
+
+
     /*
     |----------------------------------------------------------
     | Theme options
@@ -174,7 +172,7 @@ add_action('after_setup_theme', function() {
         // Default theme options (somehow a senseless comment)
         $default_theme_options = array(
             'favicon_url'               => '',
-            
+
             'comment_markdown_support'  => 1,
             'frontpage_blog_descr'      => 0,
 
@@ -184,16 +182,16 @@ add_action('after_setup_theme', function() {
                     Whoops, you found a dead link.
                 </p>',
         );
-        
+
         $gitsta_theme_options = get_option('gitsta_theme_options', $default_theme_options);
-        
+
         if(isset($gitsta_theme_options[$option])) {
             return $gitsta_theme_options[$option];
         }
-        
+
         return false;
     }
-    
+
     add_action('admin_init', function() {
         register_setting('gitsta_options', 'gitsta_theme_options', function($input) {
             return $input;
@@ -204,8 +202,8 @@ add_action('after_setup_theme', function() {
             include 'inc/Partials/ThemeOptions.php';
         });
     });
-    
-    
+
+
     /*
     |----------------------------------------------------------
     | Custom wp_link_pages function
@@ -220,22 +218,22 @@ add_action('after_setup_theme', function() {
             'prevpagelink'     => '&laquo;',
             'echo'             => true
         );
-        
+
         $r = wp_parse_args($args, $defaults);
         extract($r, EXTR_SKIP);
-        
+
         global $page, $numpages, $multipage, $more;
-        
+
         $output = '';
         if($multipage) {
             $output .= $before . '<ul class="pagination">';
-            
+
             // Attach prev link
             $i = ($page - 1);
             if(($i > 0) && $prev_and_next) {
                 $output .= '<li>' . _wp_link_page($i) . $prevpagelink . '</a></li>';
             }
-            
+
             // Attach page numbers
             for($i = 1; $i <= $numpages; $i++) {
                 $link = '';
@@ -244,20 +242,20 @@ add_action('after_setup_theme', function() {
                 } else {
                     $link .= '<li>' . _wp_link_page($i) . $i . '</a></li>';
                 }
-                
+
                 $link    = apply_filters('wp_link_pages_link', $link, $i);
                 $output .= $link;
             }
-            
+
             // Attach next link
             $i = ($page + 1);
             if(($i <= $numpages) && $prev_and_next) {
                 $output .= '<li>' . _wp_link_page($i) . $nextpagelink . '</a></li>';
             }
-            
+
             $output .= '</ul>' . $after;
         }
-        
+
         $output = apply_filters('wp_link_pages', $output, $args);
         if($echo) {
             echo $output;

@@ -1,5 +1,5 @@
 === gitsta ===
-Tested up to: 4.0
+Tested up to: 4.2.2
 Tags: white,responsive-layout,theme-options,custom-menu,full-width-template,threaded-comments,one-column,two-columns,translation-ready,sticky-post
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,7 +31,7 @@ Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. 
 
 
 **Like the theme?**
-Rate it on [WordPress.org](https://wordpress.org/themes/gitsta) or star it on [GitHub](https://github.com/HirczyK/gitsta)! Thanks!
+Rate it on [WordPress.org](https://wordpress.org/themes/gitsta) or star it on [GitHub](https://github.com/nehalist/gitsta)! Thanks!
 
 **Copyright**
 Gitsta WordPress Theme, Copyright 2014 nehalist.io
