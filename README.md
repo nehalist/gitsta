@@ -1,6 +1,11 @@
 gitsta
 ======
+
+> **This theme is no longer maintained. See [here](https://nehalist.io/not-maintaining-my-wordpress-theme-gitsta-anymore/).**
+
 Responsive, minimalistic, clean and content-oriented theme, inspired by GitHub. Mainly designed for programmers, but suitable for any bloggers.
+
+> IMPORTANT: I'm not maintaining this theme anymore. 
 
 ![screenshot](screenshot.png)
 
