@@ -7,9 +7,9 @@
             <i class="fa fa-calendar"></i>
             <?php
             if(trim(get_the_title()) != "") {
-                echo get_the_date();
+                echo get_the_date("Y-m-d");
             } else {
-                echo '<a href="'. get_the_permalink() .'" name="'. get_the_ID() .'" rel="bookmark">'. get_the_date() .'</a>';
+                echo '<a href="'. get_the_permalink() .'" name="'. get_the_ID() .'" rel="bookmark">'. get_the_date("Y-m-d") .'</a>';
             }
             ?>
 
